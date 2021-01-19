@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 . config/variables
 config/git
+config/zsh

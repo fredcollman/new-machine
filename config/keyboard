@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Swap ESC and Caps Lock
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"

@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+# set ZSH as default shell
+# chsh -s /usr/bin/zsh
+
+
+ZSHRC_DIR="`pwd`/zshrc"
+ZSHENV_CONTENTS="\
+# directory to find .zshrc etc
+ZDOTDIR=${ZSHRC_DIR}
+
+# load portable/version-controlled zshenv
+. ${ZSHRC_DIR}/.zshenv
+"
+
+if [ -e ~/.zshenv ]; then
+  echo "\
+WARNING: ~/.zshenv already exists
+You may wish to run the following command:
+
+  echo \"\\
+${ZSHENV_CONTENTS}\" >> ~/.zshenv
+
+"
+else
+  echo $ZSHENV_CONTENTS > ~/.zshenv
+fi
