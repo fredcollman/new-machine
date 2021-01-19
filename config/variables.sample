@@ -1,0 +1,6 @@
+export NAME="Fred Collman"
+export EMAIL="fredcollman@example.com"
+
+export GIT_NAME="$NAME"
+export GIT_EMAIL="$EMAIL"
+
