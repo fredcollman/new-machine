@@ -1,0 +1,6 @@
+#!zsh
+
+alias g="git"
+alias s="git status"
+alias g+="git add ."
+alias g-="git reset HEAD ."

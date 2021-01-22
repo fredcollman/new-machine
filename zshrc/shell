@@ -1,0 +1,4 @@
+#!zsh
+
+alias ls="command ls -al --color"
+alias x=exit
