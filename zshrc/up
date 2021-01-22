@@ -1,0 +1,9 @@
+#!zsh
+
+function up() {
+  dst="../"
+  if [ -n "$1" ]; then
+    dst=`printf "%${1}s" | sed -e 's: :../:g'`
+  fi
+  cd $dst
+}

@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 # sudo apt install chrome-gnome-shell
 mkdir -p downloads
+
 curl https://extensions.gnome.org/extension-data/caffeinepatapon.info.v37.shell-extension.zip > downloads/caffeine.zip
 gnome-extensions install downloads/caffeine.zip
 gnome-extensions enable caffeine@patapon.info
+
+curl https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v37.shell-extension.zip > downloads/clipboard-indicator@tudmotu.com.zip
+gnome-extensions install downloads/clipboard-indicator@tudmotu.com.zip
+gnome-extensions enable clipboard-indicator@tudmotu.com

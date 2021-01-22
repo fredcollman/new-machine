@@ -1,1 +1,2 @@
 . $ZDOTDIR/asdf
+. $ZDOTDIR/up

@@ -11,7 +11,7 @@ function g-() {
 }
 
 function ls() {
-  command ls -al --color
+  command ls -al --color "$@"
 }
 
 function x() {
