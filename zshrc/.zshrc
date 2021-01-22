@@ -1,1 +1,1 @@
-. zshrc/asdf
+. $ZDOTDIR/asdf

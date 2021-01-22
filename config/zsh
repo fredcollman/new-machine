@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 
 # set ZSH as default shell
-# chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 
+# configure user's .zshenv
 ZSHRC_DIR="`pwd`/zshrc"
 ZSHENV_CONTENTS="\
 # directory to find .zshrc etc
