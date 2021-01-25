@@ -3,3 +3,4 @@
 [ -n "$GIT_NAME" ] && git config --global user.name "$GIT_NAME"
 
 git config --global include.path `pwd`/config/.gitconfig
+git config --global core.excludesFile `pwd`/config/.gitignore

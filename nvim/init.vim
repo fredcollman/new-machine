@@ -29,6 +29,9 @@ function! PackInit() abort
   " use . to repeat tpope things (surround, switch buffer, ...)
   call minpac#add('tpope/vim-repeat')
 
+  " linting and fixing
+  call minpac#add('dense-analysis/ale')
+
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -41,3 +44,18 @@ if has('autocmd')
     autocmd BufWritePost init.vim ReloadVimrc
   augroup END "}
 endif
+
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\ 'python': ['autoimport', 'black', 'isort']
+\}
+  " 'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
+  " 'autoimport' - Fix import issues with autoimport.
+  " 'autopep8' - Fix PEP8 issues with autopep8.
+  " 'black' - Fix PEP8 issues with black.
+  " 'isort' - Sort Python imports with isort.
+  " 'remove_trailing_lines' - Remove all blank lines at the end of a file.
+  " 'reorder-python-imports' - Sort Python imports with reorder-python-imports.
+  " 'trim_whitespace' - Remove all trailing whitespace characters at the end of every line.
+  " 'yapf' - Fix Python files with yapf.
+
