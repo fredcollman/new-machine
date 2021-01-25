@@ -2,3 +2,4 @@
 
 alias ls="command ls -al --color"
 alias x=exit
+alias v="nvim"

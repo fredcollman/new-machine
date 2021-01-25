@@ -2,3 +2,4 @@
 . config/variables
 config/git
 config/zsh
+config/nvim
