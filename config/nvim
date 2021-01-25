@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
-mkdir -p ~/.config/nvim
-ln -s `pwd`/nvim/init.vim ~/.config/nvim/init.vim
+NEOVIM_DIR=~/.config/nvim
+mkdir -p $NEOVIM_DIR
+ln -s `pwd`/nvim/init.vim $NEOVIM_DIR/init.vim
+git clone https://github.com/k-takata/minpac.git $NEOVIM_DIR/pack/minpac/opt/minpac
