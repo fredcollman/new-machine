@@ -37,6 +37,9 @@ function! PackInit() abort
 
   " colour scheme
   call minpac#add('tomasr/molokai')
+
+  " <C-e> (= user_emmet_expandabbr_key) -> expand HTML shorthand
+  call minpac#add('mattn/emmet-vim')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -70,9 +73,11 @@ set relativenumber
 command! FormatJSON %!python -m json.tool
 nnoremap =j :FormatJSON<CR>
 
-nnoremap <leader>m :!mkdir -p <c-r>=expand("%:h")<CR>/<CR>
+nnoremap <leader>m :!mkdir -p <C-r>=expand("%:h")<CR>/<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
+
+let g:user_emmet_expandabbr_key='<C-e>'
 
 colorscheme molokai
