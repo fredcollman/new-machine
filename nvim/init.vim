@@ -32,11 +32,16 @@ function! PackInit() abort
   " linting and fixing
   call minpac#add('dense-analysis/ale')
 
+  " syntax highlighting: JSX, Jenkinsfile and more
+  call minpac#add('sheerun/vim-polyglot')
+
+  " colour scheme
+  call minpac#add('tomasr/molokai')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
 command! PackClean call PackInit() | call minpac#clean()
-command! ReloadVimrc source $MYVIMRC | PackUpdate
+command! ReloadVimrc source $MYVIMRC "| PackUpdate
 
 if has('autocmd')
   augroup reload_vimrc " {
@@ -66,3 +71,8 @@ command! FormatJSON %!python -m json.tool
 nnoremap =j :FormatJSON<CR>
 
 nnoremap <leader>m :!mkdir -p <c-r>=expand("%:h")<CR>/<CR>
+
+" MaxMEllon/vim-jsx-pretty installed via vim-polyglot
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
+colorscheme molokai
