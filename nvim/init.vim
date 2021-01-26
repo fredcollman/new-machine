@@ -47,15 +47,22 @@ endif
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'python': ['autoimport', 'black', 'isort']
+\ 'python': ['autoimport', 'black', 'isort'],
+\ 'javascript': ['prettier'],
+\ 'json': ['prettier'],
 \}
-  " 'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
-  " 'autoimport' - Fix import issues with autoimport.
-  " 'autopep8' - Fix PEP8 issues with autopep8.
-  " 'black' - Fix PEP8 issues with black.
-  " 'isort' - Sort Python imports with isort.
-  " 'remove_trailing_lines' - Remove all blank lines at the end of a file.
-  " 'reorder-python-imports' - Sort Python imports with reorder-python-imports.
-  " 'trim_whitespace' - Remove all trailing whitespace characters at the end of every line.
-  " 'yapf' - Fix Python files with yapf.
 
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set fileformat=unix
+
+set number
+set relativenumber
+
+
+command! FormatJSON %!python -m json.tool
+nnoremap =j :FormatJSON<CR>
+
+nnoremap <leader>m :!mkdir -p <c-r>=expand("%:h")<CR>/<CR>
