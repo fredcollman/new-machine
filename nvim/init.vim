@@ -40,6 +40,10 @@ function! PackInit() abort
 
   " <C-e> (= user_emmet_expandabbr_key) -> expand HTML shorthand
   call minpac#add('mattn/emmet-vim')
+
+  " fuzzy matching (system util, plus common vim bindings)
+  call minpac#add('junegunn/fzf', { 'do': '!./install --bin' })
+  call minpac#add('junegunn/fzf.vim')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -53,12 +57,18 @@ if has('autocmd')
   augroup END "}
 endif
 
+" ALE adjustments
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \ 'python': ['autoimport', 'black', 'isort'],
 \ 'javascript': ['prettier'],
 \ 'json': ['prettier'],
 \}
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_warning_str = '⚠️'
+let g:ale_echo_msg_error_str = '💥'
+let g:ale_echo_msg_format = '%severity% %linter% says %s'
+
 
 set tabstop=2
 set shiftwidth=2
@@ -81,3 +91,7 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:user_emmet_expandabbr_key='<C-e>'
 
 colorscheme molokai
+
+" fzf.vim shortcuts
+nnoremap <leader>f :GFiles<CR>
+nnoremap <leader>b :Buffers<CR>

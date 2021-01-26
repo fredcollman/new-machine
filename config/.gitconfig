@@ -5,3 +5,9 @@
   defaultBranch = main
 [alias]
   ci = commit
+  co = checkout
+  ff = pull --ff-only
+  staged = diff --staged
+  amend = commit --amend --no-edit
+  wip = !git add -A && git commit -m 'WIP'
+  unwip = reset --soft HEAD^

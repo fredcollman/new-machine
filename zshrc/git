@@ -1,6 +1,7 @@
 #!zsh
 
 alias g="git"
-alias s="git status"
+alias s="git status || ls"
 alias g+="git add ."
 alias g-="git reset HEAD ."
+alias l="git log"
