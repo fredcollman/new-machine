@@ -44,6 +44,9 @@ function! PackInit() abort
   " fuzzy matching (system util, plus common vim bindings)
   call minpac#add('junegunn/fzf', { 'do': '!./install --bin' })
   call minpac#add('junegunn/fzf.vim')
+
+  call minpac#add('luochen1990/rainbow')
+  call minpac#add('machakann/vim-highlightedyank')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -84,6 +87,8 @@ set relativenumber
 set ignorecase
 set smartcase
 
+set inccommand=split
+
 " w should treat - as a word boundary
 set iskeyword-=-
 
@@ -99,6 +104,10 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:user_emmet_expandabbr_key='<C-e>'
 
 colorscheme molokai
+" luochen1990/rainbow rainbow parens/HTML nesting
+let g:rainbow_active = 1
+" machakann/vim-highlightedyank show yanked region
+let g:highlightedyank_highlight_duration = 350
 
 " fzf.vim shortcuts
 nnoremap <leader>f :GFiles<CR>
