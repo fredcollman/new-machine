@@ -63,6 +63,7 @@ let g:ale_fixers = {
 \ 'python': ['autoimport', 'black', 'isort'],
 \ 'javascript': ['prettier'],
 \ 'json': ['prettier'],
+\ 'css': ['prettier'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
@@ -78,6 +79,13 @@ set fileformat=unix
 
 set number
 set relativenumber
+
+" ignore case for search, unless search is mixed case
+set ignorecase
+set smartcase
+
+" w should treat - as a word boundary
+set iskeyword-=-
 
 
 command! FormatJSON %!python -m json.tool
@@ -95,3 +103,25 @@ colorscheme molokai
 " fzf.vim shortcuts
 nnoremap <leader>f :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+
+" navigate smoothly from terminal mode/between windows
+" via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal
+if has('nvim')
+  " Esc -> exit terminal mode, with escape hatch
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <A-Esc> <Esc>
+  " quickly switch windows using alt
+  tnoremap <A-h> <C-\><C-n><C-w>h
+  tnoremap <A-j> <C-\><C-n><C-w>j
+  tnoremap <A-k> <C-\><C-n><C-w>k
+  tnoremap <A-l> <C-\><C-n><C-w>l
+endif
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" <A-r> -> paste from register in terminal mode
+" (do not clobber <C-r> shell history search)
+" via https://thoughtbot.com/upcase/videos/neovim-pasting-into-a-terminal-buffer
+tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
