@@ -97,6 +97,7 @@ command! FormatJSON %!python -m json.tool
 nnoremap =j :FormatJSON<CR>
 
 nnoremap <leader>m :!mkdir -p <C-r>=expand("%:h")<CR>/<CR>
+nnoremap <leader>x :!chmod +x %<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
