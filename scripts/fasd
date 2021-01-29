@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+sudo add-apt-repository ppa:aacebedo/fasd
+sudo apt update
+sudo apt install fasd

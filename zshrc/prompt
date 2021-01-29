@@ -1,0 +1,6 @@
+#!zsh
+# red: previous exit code (ignored if 0)
+# green: cwd (max 2 levels)
+# white: # for sudo, % for regular
+# reset color
+export PROMPT='%F{red}%(?..😬%? )%F{green}%2~ %F{white}%# %f'

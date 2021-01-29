@@ -7,3 +7,4 @@ scripts/gnome-tweak-tool
 scripts/gnome-extensions
 scripts/chrome
 scripts/tmux
+scripts/fasd
