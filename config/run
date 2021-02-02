@@ -4,3 +4,4 @@ config/git
 config/zsh
 config/nvim
 config/tmux
+config/github
