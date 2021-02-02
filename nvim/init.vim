@@ -41,6 +41,9 @@ function! PackInit() abort
   " <C-e> (= user_emmet_expandabbr_key) -> expand HTML shorthand
   call minpac#add('mattn/emmet-vim')
 
+  " <Tab> -> expand snippet
+  call minpac#add('SirVer/ultisnips')
+
   " fuzzy matching (system util, plus common vim bindings)
   call minpac#add('junegunn/fzf', { 'do': '!./install --bin' })
   call minpac#add('junegunn/fzf.vim')
