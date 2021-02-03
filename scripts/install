@@ -9,3 +9,4 @@ scripts/chrome
 scripts/tmux
 scripts/fasd
 scripts/github
+scripts/docker

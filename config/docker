@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+REGULAR_USER=$USER
+sudo usermod -aG docker $REGULAR_USER
