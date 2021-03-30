@@ -5,3 +5,4 @@ config/zsh
 config/nvim
 config/tmux
 config/github
+config/ctags

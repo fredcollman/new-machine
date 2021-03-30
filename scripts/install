@@ -10,4 +10,7 @@ scripts/tmux
 scripts/fasd
 scripts/github
 scripts/docker
+scripts/docker-compose
 scripts/fzf
+scripts/ag
+scripts/ctags

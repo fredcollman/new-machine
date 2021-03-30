@@ -12,5 +12,6 @@
   amend = commit --amend --no-edit
   wip = !git add -A && git commit -m 'WIP'
   unwip = reset --soft HEAD^
+  mktags = !.git/hooks/ctags
 [url "https://github.com/"]
   insteadOf = hub:

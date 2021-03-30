@@ -101,6 +101,7 @@ nnoremap =j :FormatJSON<CR>
 
 nnoremap <leader>m :!mkdir -p <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <leader>x :!chmod +x %<CR>
+nnoremap <leader>s :!sensible-browser %<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
@@ -116,6 +117,7 @@ let g:highlightedyank_highlight_duration = 350
 " fzf.vim shortcuts
 nnoremap <leader>f :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>u :Ag <C-R><C-W>\b<CR>
 
 " navigate smoothly from terminal mode/between windows
 " via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal
@@ -128,6 +130,8 @@ if has('nvim')
   tnoremap <A-j> <C-\><C-n><C-w>j
   tnoremap <A-k> <C-\><C-n><C-w>k
   tnoremap <A-l> <C-\><C-n><C-w>l
+
+  tnoremap <C-q> <C-\><C-n>
 endif
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
