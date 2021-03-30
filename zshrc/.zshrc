@@ -7,4 +7,4 @@
 . $ZDOTDIR/prompt
 
 # installed via fzf for vim
-. ~/.fzf.zsh
+# . ~/.fzf.zsh
