@@ -53,6 +53,9 @@ function! PackInit() abort
 
   " project-specific config, e.g. set path+=
   call minpac#add('tpope/vim-projectionist')
+
+  " <leader>gb -> :GBlame -> git blame
+  call minpac#add('tpope/vim-fugitive')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -105,6 +108,8 @@ nnoremap =j :FormatJSON<CR>
 nnoremap <leader>m :!mkdir -p <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <leader>x :!chmod +x %<CR>
 nnoremap <leader>s :!sensible-browser %<CR>
+
+nnoremap <leader>gb :Gblame<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
