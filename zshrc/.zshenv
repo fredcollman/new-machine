@@ -1,1 +1,1 @@
-PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/bin:$ZDOTDIR/bin"

@@ -50,6 +50,9 @@ function! PackInit() abort
 
   call minpac#add('luochen1990/rainbow')
   call minpac#add('machakann/vim-highlightedyank')
+
+  " project-specific config, e.g. set path+=
+  call minpac#add('tpope/vim-projectionist')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
