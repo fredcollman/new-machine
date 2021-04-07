@@ -1,0 +1,9 @@
+#!zsh
+
+alias y="yarn"
+alias y+="yarn add"
+alias yd="yarn add --dev"
+
+export ASDF_GLOBAL_YARN="1.22.10"
+
+export PATH="$(yarn global bin):$PATH"

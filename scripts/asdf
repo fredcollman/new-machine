@@ -3,3 +3,8 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
 
 # https://github.com/asdf-vm/asdf-nodejs#install
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+
+# https://github.com/pyenv/pyenv/wiki/Common-build-problems
+sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git

@@ -76,12 +76,12 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
+\ 'typescriptreact': ['prettier'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_error_str = '💥'
 let g:ale_echo_msg_format = '%severity% %linter% says %s'
-
 
 set tabstop=2
 set shiftwidth=2
@@ -107,8 +107,9 @@ nnoremap =j :FormatJSON<CR>
 
 nnoremap <leader>m :!mkdir -p <C-r>=expand("%:h")<CR>/<CR>
 nnoremap <leader>x :!chmod +x %<CR>
-nnoremap <leader>s :!sensible-browser %<CR>
+nnoremap <leader>w :!sensible-browser %<CR>
 
+nnoremap <leader>e :e .env<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
@@ -150,3 +151,5 @@ nnoremap <A-l> <C-w>l
 " (do not clobber <C-r> shell history search)
 " via https://thoughtbot.com/upcase/videos/neovim-pasting-into-a-terminal-buffer
 tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
+
+source <sfile>:h/local/*.vim

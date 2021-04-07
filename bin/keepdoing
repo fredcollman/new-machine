@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+watchmedo shell-command --patterns="*.py;*.sh;*.js;*.jsx;*file" --ignore-directories --recursive --drop --command="$1"

@@ -2,3 +2,7 @@
 *.swp
 tags
 .projections.json
+.direnv/
+.env
+.envrc
+*.nogit*
