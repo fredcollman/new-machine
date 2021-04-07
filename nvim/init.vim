@@ -56,6 +56,10 @@ function! PackInit() abort
 
   " <leader>gb -> :GBlame -> git blame
   call minpac#add('tpope/vim-fugitive')
+
+  " list buffers in UI chrome
+  call minpac#add('vim-airline/vim-airline')
+  call minpac#add('vim-airline/vim-airline-themes')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -118,6 +122,8 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:user_emmet_expandabbr_key='<C-e>'
 
 colorscheme molokai
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
 " luochen1990/rainbow rainbow parens/HTML nesting
 let g:rainbow_active = 1
 " machakann/vim-highlightedyank show yanked region
