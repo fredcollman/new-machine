@@ -154,6 +154,7 @@ tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
 
 " avoid nested Neovims
 " requires pip install neovim-remote
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 if has('nvim') && executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait"
 endif
