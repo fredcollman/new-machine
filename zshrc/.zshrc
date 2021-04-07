@@ -12,3 +12,6 @@
 # . ~/.fzf.zsh
 
 # eval "$(starship init zsh)"
+
+# run at the end for safety
+. $ZDOTDIR/plugins

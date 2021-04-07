@@ -1,0 +1,10 @@
+#!zsh
+. $ZDOTDIR/../zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+. $ZDOTDIR/../zsh-history-substring-search/zsh-history-substring-search.zsh
+# regular shell
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+# tmux
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
