@@ -152,4 +152,10 @@ nnoremap <A-l> <C-w>l
 " via https://thoughtbot.com/upcase/videos/neovim-pasting-into-a-terminal-buffer
 tnoremap <expr> <A-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
 
+" avoid nested Neovims
+" requires pip install neovim-remote
+if has('nvim') && executable('nvr')
+  let $VISUAL="nvr -cc split --remote-wait"
+endif
+
 source <sfile>:h/local/*.vim
