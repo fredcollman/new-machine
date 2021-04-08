@@ -11,7 +11,8 @@
 # installed via fzf for vim
 # . ~/.fzf.zsh
 
-# eval "$(starship init zsh)"
+# TODO: include ~/.config/starship.toml
+eval "$(starship init zsh)"
 
 # run at the end for safety
 . $ZDOTDIR/plugins

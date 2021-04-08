@@ -60,6 +60,9 @@ function! PackInit() abort
   " list buffers in UI chrome
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
+
+  " autocomplete (works in combination with ale and LSPs)
+  call minpac#add('Shougo/deoplete.nvim', {'do': 'UpdateRemotePlugins'})
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -86,6 +89,15 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_error_str = '💥'
 let g:ale_echo_msg_format = '%severity% %linter% says %s'
+" let g:ale_completion_enabled = 1
+" let g:ale_completion_delay = 1
+
+packadd deoplete.nvim
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
+call deoplete#enable()
+nnoremap <leader>h :ALEHover<CR>
 
 set tabstop=2
 set shiftwidth=2
@@ -105,6 +117,8 @@ set inccommand=split
 " w should treat - as a word boundary
 set iskeyword-=-
 
+" allow switching buffers when current buffer has unsaved changes
+set hidden
 
 command! FormatJSON %!python -m json.tool
 nnoremap =j :FormatJSON<CR>
