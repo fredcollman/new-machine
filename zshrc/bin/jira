@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+if [ -z "$JIRA_URL" ]; then
+	echo "Must set JIRA_URL"
+	exit 1
+fi
+
+if [ $# -gt 0 ]; then
+	ticket=$1
+else
+	ticket=`ticket_number`
+fi
+
+echo "$JIRA_URL/browse/$ticket"
+nohup sensible-browser "$JIRA_URL/browse/$ticket" > /dev/null 2>&1 &

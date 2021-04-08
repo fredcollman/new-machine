@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+ticket_number() {
+	git rev-parse --abbrev-ref HEAD | sed 's/[^A-Z]*\([A-Z]\+-[0-9]\+\).*/\1/'
+}
+
+ticket_number
