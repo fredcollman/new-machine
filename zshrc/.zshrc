@@ -7,6 +7,7 @@
 . $ZDOTDIR/prompt
 . $ZDOTDIR/direnv
 . $ZDOTDIR/node
+. $ZDOTDIR/docker-compose
 
 # installed via fzf for vim
 # . ~/.fzf.zsh
