@@ -14,5 +14,12 @@
   wip = !git add -A && git commit -m 'WIP'
   unwip = reset --soft HEAD^
   mktags = !.git/hooks/ctags
+  unbranch = branch -d
+  funbranch = branch -D
+  abandon = reset --hard @{upstream}
+  tidy = remote prune origin
+  current = rev-parse --abbrev-ref HEAD
+  id = "!f() { git log -n 1 "$@"; }; f"
+  nicelog = !nicelog
 [url "https://github.com/"]
   insteadOf = hub:
