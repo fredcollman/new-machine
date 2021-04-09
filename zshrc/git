@@ -2,6 +2,6 @@
 
 alias g="git"
 alias s="git status || ls"
-alias g+="git add ."
+alias g+="git add .; git staged"
 alias g-="git reset HEAD ."
 alias l="git nicelog"

@@ -9,7 +9,7 @@
   ff = pull --ff-only
   get = fetch --all --tags --prune
   p = push --set-upstream origin HEAD
-  staged = diff --staged
+  staged = !clear && git diff --staged
   amend = commit --amend --no-edit
   wip = !git add -A && git commit -m 'WIP'
   unwip = reset --soft HEAD^
