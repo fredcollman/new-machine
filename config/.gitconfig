@@ -23,3 +23,5 @@
   nicelog = !nicelog
 [url "https://github.com/"]
   insteadOf = hub:
+[include]
+  path = ~/local.gitconfig
