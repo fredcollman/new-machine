@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+less --LONG-PROMPT --RAW-CONTROL-CHARS --quit-if-one-screen --HILITE-UNREAD

@@ -9,4 +9,4 @@ FORMAT="$HASH}$DATE}$AUTHOR}$BRANCH $DESC"
 
 git log --graph --color=always --format="$FORMAT" --date=relative "$@" \
   | awk -F'}' '{ printf "%s %12s %.9s %s\n", $1, $2, $3, $4; }' \
-  | less --LONG-PROMPT --RAW-CONTROL-CHARS --quit-if-one-screen --HILITE-UNREAD
+  | better-less

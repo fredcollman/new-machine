@@ -13,3 +13,9 @@ bindkey '\C-x\C-e' edit-command-line
 # allows e.g. \C-r for history search
 set -o emacs
 bindkey -e
+
+function grepp() {
+  ag --group -A 2 --smart-case --pager="better-less" "$@"
+}
+
+alias "?"=grepp
