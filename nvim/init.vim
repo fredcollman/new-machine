@@ -79,10 +79,12 @@ endif
 " ALE adjustments
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'python': ['autoimport', 'black', 'isort'],
+\ 'python': ['autoimport', 'isort', 'black'],
 \ 'javascript': ['prettier'],
+\ 'javascriptreact': ['prettier'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
+\ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
 \}
 let g:ale_sign_column_always = 1
@@ -128,7 +130,7 @@ nnoremap <leader>x :!chmod +x %<CR>
 nnoremap <leader>w :!sensible-browser %<CR>
 
 nnoremap <leader>e :e .env<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Git blame<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1

@@ -11,7 +11,7 @@
   p = push --set-upstream origin HEAD
   staged = !clear && git diff --staged
   amend = commit --amend --no-edit
-  wip = !git add -A && git commit -m 'WIP'
+  wip = !git add -A && git commit --no-verify -m 'WIP'
   unwip = reset --soft HEAD^
   mktags = !.git/hooks/ctags
   unbranch = branch -d
