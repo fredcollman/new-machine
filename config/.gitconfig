@@ -21,6 +21,8 @@
   current = rev-parse --abbrev-ref HEAD
   id = "!f() { git log -n 1 "$@"; }; f"
   nicelog = !nicelog
+  cloc = !cloc --vcs=git
+  rev = !glab mr checkout
 [url "https://github.com/"]
   insteadOf = hub:
 [include]

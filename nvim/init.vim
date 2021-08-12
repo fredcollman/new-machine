@@ -91,7 +91,7 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_error_str = '💥'
 let g:ale_echo_msg_format = '%severity% %linter% says %s'
-" let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 1
 " let g:ale_completion_delay = 1
 
 packadd deoplete.nvim

@@ -15,3 +15,4 @@ scripts/fzf
 scripts/ag
 scripts/ctags
 scripts/direnv
+scripts/cloc
