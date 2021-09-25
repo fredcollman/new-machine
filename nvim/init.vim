@@ -62,7 +62,10 @@ function! PackInit() abort
   call minpac#add('vim-airline/vim-airline-themes')
 
   " autocomplete (works in combination with ale and LSPs)
-  call minpac#add('Shougo/deoplete.nvim', {'do': 'UpdateRemotePlugins'})
+  " call minpac#add('Shougo/deoplete.nvim', {'do': 'UpdateRemotePlugins'})
+
+  " autocomplete (dedicated alternative via LSP)
+  " call minpac#add('neoclide/coc.nvim', {'branch': 'release', 'do': '!yarn install --frozen-lockfile'})
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update()
@@ -94,11 +97,11 @@ let g:ale_echo_msg_format = '%severity% %linter% says %s'
 let g:ale_completion_enabled = 1
 " let g:ale_completion_delay = 1
 
-packadd deoplete.nvim
-call deoplete#custom#option('sources', {
-\ '_': ['ale'],
-\})
-call deoplete#enable()
+" packadd deoplete.nvim
+" call deoplete#custom#option('sources', {
+" \ '_': ['ale'],
+" \})
+" call deoplete#enable()
 nnoremap <leader>h :ALEHover<CR>
 
 set tabstop=2
