@@ -2,4 +2,6 @@
 NEOVIM_DIR=~/.config/nvim
 mkdir -p $NEOVIM_DIR
 ln -s `pwd`/nvim/init.vim $NEOVIM_DIR/init.vim
+ln -s `pwd`/nvim/lua $NEOVIM_DIR/lua
 git clone https://github.com/k-takata/minpac.git $NEOVIM_DIR/pack/minpac/opt/minpac
+git clone --depth 1 https://github.com/wbthomason/packer.nvim $NEOVIM_DIR/pack/packer/start/packer.nvim
