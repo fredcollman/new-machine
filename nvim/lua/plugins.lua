@@ -75,5 +75,7 @@ return require('packer').startup(
     -- autocomplete (dedicated alternative via LSP)
     -- use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
 
+    use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+
   end
   )
