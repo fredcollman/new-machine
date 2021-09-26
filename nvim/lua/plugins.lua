@@ -75,6 +75,12 @@ return require('packer').startup(
     -- autocomplete (dedicated alternative via LSP)
     -- use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
 
+    -- connects built-in Neovim LSP client to standard LSP servers
+    use 'neovim/nvim-lspconfig'
+
+    -- show available code actions
+    use 'kosayoda/nvim-lightbulb'
+
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
   end
