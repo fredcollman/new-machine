@@ -81,6 +81,15 @@ return require('packer').startup(
     -- show available code actions
     use 'kosayoda/nvim-lightbulb'
 
+    -- smarter autocomplete
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-nvim-lsp'
+
+    -- fancy search/pickers/sorters
+    use 'nvim-telescope/telescope.nvim'
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
   end

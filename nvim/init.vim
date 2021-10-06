@@ -82,8 +82,8 @@ let g:rainbow_active = 1
 let g:highlightedyank_highlight_duration = 350
 
 " fzf.vim shortcuts
-nnoremap <leader>f :GFiles<CR>
-nnoremap <leader>b :Buffers<CR>
+" nnoremap <leader>f :GFiles<CR>
+" nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>u :Ag <C-R><C-W>\b<CR>
 
 " navigate smoothly from terminal mode/between windows

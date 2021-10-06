@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
+# installed as typically used
 sudo apt install silversearcher-ag
+# installed for compatibility with nvim-telescope, may become preferred
+brew install ripgrep

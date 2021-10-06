@@ -1,8 +1,7 @@
 modules = {
   "./plugins",
-  "./first",
-  "./second",
   "./lsp",
+  "./searching",
 }
 
 function _G.reload_fred_config()
