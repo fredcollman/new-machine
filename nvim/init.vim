@@ -1,7 +1,8 @@
+" map leader before anything else, so it gets picked up in lua configs
+let mapleader = "\<Space>"
+
 " load plugins first (and other lua config)
 lua require 'fred'
-
-let mapleader = "\<Space>"
 
 " open vimrc in a new tab
 nnoremap <leader>v :tabedit $MYVIMRC<CR>
