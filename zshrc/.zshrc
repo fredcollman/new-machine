@@ -13,7 +13,7 @@
 # . ~/.fzf.zsh
 
 # TODO: include ~/.config/starship.toml
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # run at the end for safety
 . $ZDOTDIR/plugins

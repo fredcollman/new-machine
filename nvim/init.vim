@@ -1,3 +1,6 @@
+" load plugins first (and other lua config)
+lua require 'fred'
+
 let mapleader = "\<Space>"
 
 " open vimrc in a new tab
@@ -118,8 +121,6 @@ if has('nvim') && executable('nvr')
 endif
 
 source <sfile>:h/local/*.vim
-
-lua require 'fred'
 
 let g:firenvim_config = { 
     \ 'globalSettings': {

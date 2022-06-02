@@ -4,4 +4,4 @@ alias y="yarn"
 alias y+="yarn add"
 alias yd="yarn add --dev"
 
-export PATH="$(ASDF_YARN_VERSION=1.22.10 ASDF_NODEJS_VERSION=15.7.0 yarn global bin):$PATH"
+export PATH="$(yarn global bin):$PATH"

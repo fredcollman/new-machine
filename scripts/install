@@ -16,3 +16,5 @@ scripts/ctags
 scripts/direnv
 scripts/cloc
 scripts/neovim
+scripts/python
+scripts/nodejs

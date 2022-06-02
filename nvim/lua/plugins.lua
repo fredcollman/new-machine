@@ -86,8 +86,16 @@ return require('packer').startup(
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-nvim-lsp'
 
+    -- wanted by telescope
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        -- run step doesn't seem to work
+        -- run = ':TSUpdate'
+    }
+
     -- fancy search/pickers/sorters
     use 'nvim-telescope/telescope.nvim'
+
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }

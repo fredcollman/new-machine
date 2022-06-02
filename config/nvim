@@ -1,7 +1,14 @@
 #!/usr/bin/env sh
 NEOVIM_DIR=~/.config/nvim
-mkdir -p $NEOVIM_DIR
+NEOVIM_PACKAGES_DIR=~/.local/share/nvim/site
+
+mkdir -p $NEOVIM_DIR/local
+if [ ! -f "$NEOVIM_DIR/local/local.vim" ]; then
+  echo '" put machine-specific config in here' > $NEOVIM_DIR/local/local.vim
+fi
+
 ln -s `pwd`/nvim/init.vim $NEOVIM_DIR/init.vim
 ln -s `pwd`/nvim/lua $NEOVIM_DIR/lua
+
 git clone https://github.com/k-takata/minpac.git $NEOVIM_DIR/pack/minpac/opt/minpac
-git clone --depth 1 https://github.com/wbthomason/packer.nvim $NEOVIM_DIR/pack/packer/start/packer.nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim $NEOVIM_PACKAGES_DIR/pack/packer/start/packer.nvim
