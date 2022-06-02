@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-cp config/.tmux.conf ~/.tmux.conf
+ln -s `pwd`/config/.tmux.conf ~/.tmux.conf

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 scripts/essentials
-scripts/homebrew
+. scripts/homebrew
 scripts/zsh
 scripts/asdf
 scripts/gnome-tweak-tool
@@ -10,9 +10,9 @@ scripts/tmux
 scripts/fasd
 scripts/github
 scripts/docker
-scripts/docker-compose
 scripts/fzf
 scripts/ag
 scripts/ctags
 scripts/direnv
 scripts/cloc
+scripts/neovim

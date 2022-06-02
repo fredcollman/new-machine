@@ -10,3 +10,11 @@ Parts can be skipped by commenting them out.
 3. scripts/install
 4. config/run
 5. Set up zsh (TODO)
+
+## OS-specific
+
+If running on Windows, you might need to make sure that line endings are configured appropriately:
+
+```sh
+git config --global core.autocrlf true
+```
