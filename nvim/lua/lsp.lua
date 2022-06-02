@@ -25,7 +25,7 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
-  'pyright',
+  -- 'pyright',
   'tsserver',
 }
 for _, lsp in ipairs(servers) do

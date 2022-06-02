@@ -81,10 +81,10 @@ return require('packer').startup(
     -- show available code actions
     use 'kosayoda/nvim-lightbulb'
 
-    -- smarter autocomplete
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-nvim-lsp'
+    -- -- smarter autocomplete
+    -- use 'hrsh7th/nvim-cmp'
+    -- use 'hrsh7th/cmp-buffer'
+    -- use 'hrsh7th/cmp-nvim-lsp'
 
     -- fancy search/pickers/sorters
     use 'nvim-telescope/telescope.nvim'

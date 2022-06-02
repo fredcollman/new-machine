@@ -15,13 +15,14 @@ endif
 " ALE adjustments
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'python': ['autoimport', 'isort', 'black'],
+\ 'python': ['autoimport', 'isort', 'black', 'autoflake'],
 \ 'javascript': ['prettier'],
 \ 'javascriptreact': ['prettier'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
+\ 'elixir': ['mix_format'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
