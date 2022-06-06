@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+git branch \
+  --sort=-committerdate \
+  --color=always \
+  --format="%(HEAD) %(color:red)%(objectname:short) %(color:yellow)%(align:width=12)%(committerdate:relative)%(end) %(color:green)%(refname:short) %(color:blue)%(authorname) %(color:reset)%(subject)" \
+  | better-less
