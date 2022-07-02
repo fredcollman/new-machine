@@ -8,6 +8,7 @@
 . $ZDOTDIR/direnv
 . $ZDOTDIR/node
 . $ZDOTDIR/docker-compose
+. $ZDOTDIR/brew
 
 # installed via fzf for vim
 # . ~/.fzf.zsh
@@ -17,3 +18,5 @@
 
 # run at the end for safety
 . $ZDOTDIR/plugins
+
+export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Is)"
