@@ -15,7 +15,7 @@ endif
 " ALE adjustments
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'python': ['autoimport', 'isort', 'black', 'autoflake'],
+\ 'python': ['isort', 'black', 'autoflake'],
 \ 'javascript': ['prettier'],
 \ 'javascriptreact': ['prettier'],
 \ 'json': ['prettier'],
