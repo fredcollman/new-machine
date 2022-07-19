@@ -1,4 +1,8 @@
+" map leader before anything else, so it gets picked up in lua configs
 let mapleader = "\<Space>"
+
+" load plugins first (and other lua config)
+lua require 'fred'
 
 " open vimrc in a new tab
 nnoremap <leader>v :tabedit $MYVIMRC<CR>
@@ -119,8 +123,6 @@ if has('nvim') && executable('nvr')
 endif
 
 source <sfile>:h/local/*.vim
-
-lua require 'fred'
 
 let g:firenvim_config = { 
     \ 'globalSettings': {

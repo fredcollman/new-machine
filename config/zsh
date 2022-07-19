@@ -2,6 +2,7 @@
 
 # set ZSH as default shell
 chsh -s /usr/bin/zsh
+git submodule update
 
 
 # configure user's .zshenv

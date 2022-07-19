@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo snap install universal-ctags
+brew install universal-ctags

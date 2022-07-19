@@ -9,7 +9,9 @@ function _G.reload_fred_config()
     if (vim.env.NEOVIM_DEBUG ~= nil) then
       print("Reloading", mod)
     end
-    require('plenary.reload').reload_module(mod)
+    if pcall(require, 'plenary.reload') then
+      require('plenary.reload').reload_module(mod)
+    end
     require(mod)
   end
 end

@@ -1,2 +1,8 @@
 #!/usr/bin/env sh
+# NOTE: source this script, to make brew available to subsequent install commands
+
+# ref: https://docs.brew.sh/Homebrew-on-Linux
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -7,3 +7,4 @@ config/tmux
 config/github
 config/ctags
 config/local-bin
+config/asdf

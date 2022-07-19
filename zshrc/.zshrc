@@ -8,12 +8,15 @@
 . $ZDOTDIR/direnv
 . $ZDOTDIR/node
 . $ZDOTDIR/docker-compose
+. $ZDOTDIR/brew
 
 # installed via fzf for vim
 # . ~/.fzf.zsh
 
 # TODO: include ~/.config/starship.toml
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # run at the end for safety
 . $ZDOTDIR/plugins
+
+export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Is)"

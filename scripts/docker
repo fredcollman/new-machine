@@ -3,11 +3,12 @@
 # NB: architecture dependent
 # ARCH=amd64
 # ARCH=armhf
-ARCH=arm64
+# ARCH=arm64
+ARCH=$(dpkg --print-architecture)
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
    "deb [arch=$ARCH] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin

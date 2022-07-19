@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+asdf plugin add nodejs
+asdf plugin add yarn
+asdf install nodejs lts
+asdf install yarn latest
