@@ -3,3 +3,4 @@
 config/variables
 downloads/
 zshrc/.zcompdump
+zshrc/local-overrides
