@@ -9,6 +9,7 @@
 . $ZDOTDIR/node
 . $ZDOTDIR/docker-compose
 . $ZDOTDIR/brew
+. $ZDOTDIR/terraform
 
 # installed via fzf for vim
 # . ~/.fzf.zsh
