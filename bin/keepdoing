@@ -1,2 +1,3 @@
 #!/usr/bin/env sh
-watchmedo shell-command --patterns="*.py;*.sh;*.js;*.jsx;*file" --ignore-directories --recursive --drop --command="$1"
+PATTERNS=${KD_PATTERNS:-"*.py;*.sh;*.js;*.jsx;*file"}
+watchmedo shell-command --patterns="$PATTERNS" --ignore-directories --recursive --drop --command="$1"
