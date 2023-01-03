@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# https://github.com/tfeldmann/organize
+pip install "organize-tool"
