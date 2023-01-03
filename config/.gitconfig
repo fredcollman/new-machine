@@ -23,6 +23,7 @@
   nicelog = !nicelog
   cloc = !cloc --vcs=git
   rev = !glab mr checkout
+  mrv = !glab mr view --web
   br = !nicebranch
 [url "https://github.com/"]
   insteadOf = hub:
