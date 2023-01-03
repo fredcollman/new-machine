@@ -3,6 +3,7 @@ scripts/essentials
 . scripts/homebrew
 scripts/zsh
 scripts/asdf
+scripts/jq
 scripts/gnome-tweak-tool
 scripts/gnome-extensions
 scripts/chrome
@@ -18,3 +19,4 @@ scripts/cloc
 scripts/neovim
 scripts/python
 scripts/nodejs
+scripts/terraform
