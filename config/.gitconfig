@@ -25,6 +25,7 @@
   rev = !glab mr checkout
   mrv = !glab mr view --web
   br = !nicebranch
+  aliases = !git config -l | grep alias | cut -c 7-
 [url "https://github.com/"]
   insteadOf = hub:
 [include]

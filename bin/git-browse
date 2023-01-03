@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -e
+
+gh repo view --web
+glab repo view --web
