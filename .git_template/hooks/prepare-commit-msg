@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+target_file="$1"
+
+commit_type="$2"
+
+if [ ! -z "$commit_type" ]; then
+    # re-use existing commit message
+    exit 0
+fi
+
+
+existing_content=$(cat $target_file)
+
+branch_type=$(git current | cut -d '/' -f1)
+
+cat > $target_file <<EOF
+${branch_type}[$(ticket_number)]: 
+${existing_content}
+# generated with args: "$@"
+EOF
