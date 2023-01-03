@@ -20,12 +20,12 @@ endif
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \ 'python': ['isort', 'black', 'autoflake'],
-\ 'javascript': ['prettier'],
-\ 'javascriptreact': ['prettier'],
+\ 'javascript': ['prettier', 'eslint'],
+\ 'javascriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
-\ 'typescript': ['prettier'],
-\ 'typescriptreact': ['prettier'],
+\ 'typescript': ['prettier', 'eslint'],
+\ 'typescriptreact': ['prettier', 'eslint'],
 \ 'elixir': ['mix_format'],
 \}
 let g:ale_sign_column_always = 1
