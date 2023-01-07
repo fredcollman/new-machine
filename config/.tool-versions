@@ -2,3 +2,4 @@ python 3.10.4
 nodejs lts
 yarn 1.22.19
 rust 1.66.0
+pnpm 7.12.2
