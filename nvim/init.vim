@@ -76,6 +76,9 @@ nnoremap <leader>gb :Git blame<CR>
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
 
+" https://github.com/wuelnerdotexe/vim-astro#configuration
+let g:astro_typescript = 'enable'
+
 let g:user_emmet_expandabbr_key='<C-e>'
 
 colorscheme molokai
