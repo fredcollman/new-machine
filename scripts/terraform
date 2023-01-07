@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+asdf plugin add terraform
+asdf install terraform latest
+asdf global terraform latest

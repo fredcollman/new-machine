@@ -26,5 +26,9 @@
   br = !nicebranch
 [url "https://github.com/"]
   insteadOf = hub:
+[url "https://github.com/fredcollman/"]
+  insteadOf = fred:
+[url "https://github.com/fredcollman/"]
+  insteadOf = me:
 [include]
   path = ~/local.gitconfig
