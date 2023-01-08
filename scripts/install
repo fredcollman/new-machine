@@ -22,3 +22,4 @@ scripts/nodejs
 scripts/rust
 scripts/tauri
 scripts/terraform
+scripts/shellspec

@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# https://github.com/poikilotherm/asdf-shellspec.git
+asdf plugin add shellspec
+asdf install shellspec latest
+asdf global shellspec latest
