@@ -48,6 +48,9 @@ return require('packer').startup(
     -- syntax highlighting: Hashicorp Sentinel
     use 'hashicorp/sentinel.vim'
 
+    -- syntax highlight: astro
+    use 'wuelnerdotexe/vim-astro'
+
     -- colour scheme
     use 'tomasr/molokai'
 
