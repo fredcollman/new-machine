@@ -45,6 +45,9 @@ return require('packer').startup(
     -- syntax highlighting: JSX, Jenkinsfile and more
     use 'sheerun/vim-polyglot'
 
+    -- syntax highlighting: Hashicorp Sentinel
+    use 'hashicorp/sentinel.vim'
+
     -- colour scheme
     use 'tomasr/molokai'
 
