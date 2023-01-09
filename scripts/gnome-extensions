@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 # sudo apt install chrome-gnome-shell
+sudo apt install gnome-shell-extension-manager
 mkdir -p downloads
 
 curl https://extensions.gnome.org/extension-data/caffeinepatapon.info.v37.shell-extension.zip > downloads/caffeine.zip
