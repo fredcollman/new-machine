@@ -24,3 +24,4 @@ scripts/tauri
 scripts/terraform
 scripts/organize
 scripts/pgadmin4
+scripts/brew-leaves
