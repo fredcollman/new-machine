@@ -19,7 +19,7 @@ endif
 " ALE adjustments
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\ 'python': ['isort', 'black', 'autoflake'],
+\ 'python': ['black', 'ruff'],
 \ 'javascript': ['prettier', 'eslint'],
 \ 'javascriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
@@ -93,7 +93,10 @@ let g:highlightedyank_highlight_duration = 350
 " fzf.vim shortcuts
 " nnoremap <leader>f :GFiles<CR>
 " nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>u :Ag <C-R><C-W>\b<CR>
+nnoremap <leader>u :Rg <C-R><C-W>\b<CR>
+" muscle memory: clobber Ag to use Rg instead
+cabbrev Ag Rg
+nnoremap <leader>t :Tags<CR>
 
 " navigate smoothly from terminal mode/between windows
 " via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal
