@@ -96,6 +96,8 @@ let g:highlightedyank_highlight_duration = 350
 nnoremap <leader>u :Rg <C-R><C-W>\b<CR>
 " muscle memory: clobber Ag to use Rg instead
 cabbrev Ag Rg
+" and deal with casing issues
+cabbrev ag Rg
 nnoremap <leader>t :Tags<CR>
 
 " navigate smoothly from terminal mode/between windows

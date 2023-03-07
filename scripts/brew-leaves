@@ -12,6 +12,7 @@ brew install \
   # lolcat \
   # luajit-openresty \
   # neovim \
-  pipx
+  pipx \
   # ripgrep \
   # tmate \
+  tree
