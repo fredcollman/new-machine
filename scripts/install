@@ -20,3 +20,4 @@ scripts/neovim
 scripts/python
 scripts/nodejs
 scripts/terraform
+scripts/flatpak
