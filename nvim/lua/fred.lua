@@ -2,6 +2,7 @@ modules = {
   "./plugins",
   "./lsp",
   "./searching",
+  "./snippets",
 }
 
 function _G.reload_fred_config()

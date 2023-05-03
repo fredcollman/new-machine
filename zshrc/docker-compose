@@ -3,10 +3,10 @@
 alias d="docker"
 
 # dc is already taken
-alias dco="docker-compose"
-alias dcof="docker-compose -f docker-compose.yml"
+alias dco="docker compose"
+alias dcof="docker compose -f docker-compose.yml"
 
-alias dcu="docker-compose up"
-alias dcr="docker-compose run --rm"
-alias dcb="docker-compose build"
-alias dcl="docker-compose logs --tail=1000 --follow"
+alias dcu="docker compose up"
+alias dcr="docker compose run --rm"
+alias dcb="docker compose build"
+alias dcl="docker compose logs --tail=1000 --follow"
