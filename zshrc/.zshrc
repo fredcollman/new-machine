@@ -11,6 +11,10 @@
 . $ZDOTDIR/brew
 . $ZDOTDIR/terraform
 
+if [ -f $ZDOTDIR/local-overrides ]; then
+  . $ZDOTDIR/local-overrides
+fi
+
 # installed via fzf for vim
 # . ~/.fzf.zsh
 

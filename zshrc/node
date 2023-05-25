@@ -1,12 +1,18 @@
 #!zsh
 
-alias y="yarn"
-alias y+="yarn add"
-alias yd="yarn add --dev"
+### yarn
+# alias y="yarn"
+# alias y+="yarn add"
+# alias yd="yarn add --dev"
 
 export PATH="$(yarn global bin):$PATH"
+### yarn end
 
-# pnpm
+### pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+
+alias y="pnpm" # muscle memory
+alias y+="pnpm install"
+alias yd="pnpm install --dev"
+### pnpm end
