@@ -27,6 +27,7 @@ end
 local servers = {
   -- 'pyright',
   'tsserver',
+  'rust_analyzer'
 }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {

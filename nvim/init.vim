@@ -28,6 +28,10 @@ let g:ale_fixers = {
 \ 'typescriptreact': ['prettier'],
 \ 'elixir': ['mix_format'],
 \ 'terraform': ['terraform'],
+\ 'rust': ['rustfmt'],
+\}
+let g:ale_linters = {
+\ 'rust': ['analyzer'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
