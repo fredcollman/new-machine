@@ -18,3 +18,39 @@ If running on Windows, you might need to make sure that line endings are configu
 ```sh
 git config --global core.autocrlf true
 ```
+
+## Examples of home directory dotfiles
+
+```sh
+# .zshenv
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+export DEBUG_SOURCED_HOME_ZSHRC="~/.zshrc at $(date -Is)"
+
+
+eval "$(starship init zsh)"
+
+# pnpm overrides for muscle memory
+alias y="pnpm"
+alias y+="pnpm add"
+alias yd="pnpm add --save-dev"
+```
+
+```sh
+# .zshrc
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+export DEBUG_SOURCED_HOME_ZSHRC="~/.zshrc at $(date -Is)"
+
+
+eval "$(starship init zsh)"
+
+# pnpm overrides for muscle memory
+alias y="pnpm"
+alias y+="pnpm add"
+alias yd="pnpm add --save-dev"
+```
+
+```sh
+# .zprofile
+BM_HELLO_NOEXPORT=hello
+export BM_HELLO_EXPORT=hello
+```
