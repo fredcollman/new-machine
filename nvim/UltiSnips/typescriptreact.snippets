@@ -1,0 +1,17 @@
+extends typescript
+
+snippet c
+`!p fn = snip.basename
+proptype = f"{fn}Props"
+snip.rv = "\n".join([
+f"interface {proptype} {{",
+"	todo: null",
+"}",
+"",
+f"const {fn} = ({{todo}}: {proptype}) => {{",
+"	return <>TODO: {todo}</>",
+"}",
+"",
+f"export default {fn}",
+])`
+endsnippet
