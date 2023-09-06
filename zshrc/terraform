@@ -2,3 +2,5 @@
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $(asdf which terraform) terraform
 alias tf=terraform
+
+alias tspace=bundle exec terraspace

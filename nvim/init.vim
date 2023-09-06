@@ -100,6 +100,10 @@ cabbrev Ag Rg
 cabbrev ag Rg
 nnoremap <leader>t :Tags<CR>
 
+nnoremap <leader>a :A<CR>
+nnoremap <leader>s :Estory<CR>
+
+
 " navigate smoothly from terminal mode/between windows
 " via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal
 if has('nvim')

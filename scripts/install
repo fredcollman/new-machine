@@ -22,6 +22,7 @@ scripts/nodejs
 scripts/rust
 scripts/tauri
 scripts/terraform
+scripts/ruby
 scripts/organize
 scripts/pgadmin4
 scripts/brew-leaves
