@@ -24,4 +24,4 @@ fi
 # run at the end for safety
 . $ZDOTDIR/plugins
 
-export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Is)"
+export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Iseconds)"

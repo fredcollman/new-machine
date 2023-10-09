@@ -1,2 +1,4 @@
 #!zsh
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# TODO support in OS-agnostic way
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"

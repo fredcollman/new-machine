@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. scripts/homebrew-macos
+# TODO skip apt-get (and importing old keyring?)
+scripts/asdf
+scripts/brew-leaves-macos

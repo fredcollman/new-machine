@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+mkdir -p ~/dev
+cd ~/dev
+git clone https://github.com/whjvenyl/fasd
+cd fasd
+sudo make install

@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# misc formulae to install
+# to calculate::
+#
+#     brew leaves
+
+brew install \
+  direnv \
+  gh \
+  neovim \
+  pipx \
+  ripgrep \
+  tree
+# bats-core \
+# exercism \
+# fasd \
+# gawk \
+# lolcat \
+# luajit-openresty \
+# tmate \
