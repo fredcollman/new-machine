@@ -54,7 +54,8 @@ return require('packer').startup(
     use 'mattn/emmet-vim'
 
     -- <Tab> -> expand snippet
-    use 'SirVer/ultisnips'
+    -- TODO: re-enable once Python fully installed via asdf
+    -- use 'SirVer/ultisnips'
 
     -- fuzzy matching (system util, plus common vim bindings)
     use { 'junegunn/fzf', run = './install --bin' }
