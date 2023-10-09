@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 asdf plugin add nodejs
 asdf plugin add yarn
-asdf install nodejs lts
+asdf plugin add pnpm
+asdf install nodejs 18.18.0
 asdf install yarn latest
+asdf install pnpm latest

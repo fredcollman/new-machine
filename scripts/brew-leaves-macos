@@ -8,6 +8,7 @@
 brew install \
   direnv \
   gh \
+  gnupg \
   neovim \
   pipx \
   ripgrep \

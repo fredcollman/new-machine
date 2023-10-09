@@ -1,5 +1,5 @@
-python 3.10.4
-nodejs lts
+python 3.12.0
+nodejs 18.18.0
 yarn 1.22.19
 terraform 1.6.0
 pnpm 7.30.0

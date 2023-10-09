@@ -55,7 +55,7 @@ return require('packer').startup(
 
     -- <Tab> -> expand snippet
     -- TODO: re-enable once Python fully installed via asdf
-    -- use 'SirVer/ultisnips'
+    use 'SirVer/ultisnips'
 
     -- fuzzy matching (system util, plus common vim bindings)
     use { 'junegunn/fzf', run = './install --bin' }
