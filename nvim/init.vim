@@ -90,7 +90,11 @@ let g:highlightedyank_highlight_duration = 350
 " fzf.vim shortcuts
 " nnoremap <leader>f :GFiles<CR>
 " nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>u :Ag <C-R><C-W>\b<CR>
+nnoremap <leader>u :Rg <C-R><C-W>\b<CR>
+" muscle memory: clobber Ag to use Rg instead
+cabbrev Ag Rg
+" and deal with casing issues
+cabbrev ag Rg
 
 " navigate smoothly from terminal mode/between windows
 " via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal

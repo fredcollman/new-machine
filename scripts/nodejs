@@ -5,3 +5,7 @@ asdf plugin add pnpm
 asdf install nodejs 18.18.0
 asdf install yarn latest
 asdf install pnpm latest
+pnpm install --global \
+  neovim \
+  diagnostic-languageserver \
+  typescript-language-server
