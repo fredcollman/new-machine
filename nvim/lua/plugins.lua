@@ -38,7 +38,8 @@ return require('packer').startup(
     use 'tpope/vim-repeat'
 
     -- linting and fixing
-    use 'dense-analysis/ale'
+    -- use 'dense-analysis/ale'
+    use '~/dev/ale'
 
 
     -- syntax highlighting: JSX, Jenkinsfile and more
