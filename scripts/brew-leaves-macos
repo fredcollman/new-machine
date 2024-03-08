@@ -6,14 +6,18 @@
 #     brew leaves
 
 brew install \
+  cloc \
   direnv \
   gh \
+  glab \
   gnupg \
   neovim \
   pipx \
   ripgrep \
   tmux \
-  tree
+  tree \
+  universal-ctags \
+  wget
 # bats-core \
 # exercism \
 # fasd \

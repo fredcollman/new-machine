@@ -15,7 +15,7 @@ set -o emacs
 bindkey -e
 
 function grepp() {
-  ag --group -A 2 --smart-case --pager="better-less" "$@"
+  rg -A 2 --smart-case "$@"
 }
 
 alias "?"=grepp

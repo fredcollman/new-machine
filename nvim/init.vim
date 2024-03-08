@@ -26,8 +26,11 @@ let g:ale_fixers = {
 \ 'css': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
+\ 'vue': ['prettier'],
 \ 'elixir': ['mix_format'],
 \ 'terraform': ['terraform'],
+\ 'sh': ['shfmt'],
+\ 'yaml': ['prettier'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
@@ -35,6 +38,14 @@ let g:ale_echo_msg_error_str = '💥'
 let g:ale_echo_msg_format = '%severity% %linter% says %s'
 let g:ale_completion_enabled = 1
 " let g:ale_completion_delay = 1
+
+" until I can figure out how to get LSP hover working
+let g:ale_disable_lsp = 0
+let g:ale_python_pyright_config = {
+\ 'pyright': {
+\   'disableLanguageServices': v:true,
+\ },
+\}
 
 " packadd deoplete.nvim
 " call deoplete#custom#option('sources', {

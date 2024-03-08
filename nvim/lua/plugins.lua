@@ -37,6 +37,9 @@ return require('packer').startup(
     -- use . to repeat tpope things (surround, switch buffer, ...)
     use 'tpope/vim-repeat'
 
+    -- make absolute imports (e.g. TS ~/) work sensibly
+    use 'tpope/vim-apathy'
+
     -- linting and fixing
     use 'dense-analysis/ale'
 
@@ -54,7 +57,6 @@ return require('packer').startup(
     use 'mattn/emmet-vim'
 
     -- <Tab> -> expand snippet
-    -- TODO: re-enable once Python fully installed via asdf
     use 'SirVer/ultisnips'
 
     -- fuzzy matching (system util, plus common vim bindings)
@@ -81,6 +83,12 @@ return require('packer').startup(
 
     -- connects built-in Neovim LSP client to standard LSP servers
     use 'neovim/nvim-lspconfig'
+
+    -- to manage tools for LSP, DAP, linting (pyright, volar, black, prettier et al)
+    use 'williamboman/mason.nvim'
+    --
+    -- to make it easier for mason to manage LSPs (mason can also manage other things)
+    use 'williamboman/mason-lspconfig.nvim'
 
     -- show available code actions
     use 'kosayoda/nvim-lightbulb'

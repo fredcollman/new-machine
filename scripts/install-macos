@@ -6,3 +6,4 @@ scripts/python
 scripts/nodejs
 scripts/terraform
 scripts/brew-leaves-macos
+scripts/ctags
