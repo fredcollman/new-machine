@@ -6,3 +6,10 @@ class $1Test(TestCase):
         x
 endsnippet
 
+snippet cqc
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
+
+with CaptureQueriesContext(connection) as ctx:
+    print(ctx.captured_queries)
+endsnippet

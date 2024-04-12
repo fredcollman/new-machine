@@ -33,3 +33,5 @@
   insteadOf = me:
 [include]
   path = ~/local.gitconfig
+; [blame]
+;   ignoreRevsFile = .git-blame-ignore-revs
