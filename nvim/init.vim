@@ -94,6 +94,9 @@ let g:rainbow_active = 1
 " machakann/vim-highlightedyank show yanked region
 let g:highlightedyank_highlight_duration = 350
 
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
 " fzf.vim shortcuts
 " nnoremap <leader>f :GFiles<CR>
 " nnoremap <leader>b :Buffers<CR>
