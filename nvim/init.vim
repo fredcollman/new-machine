@@ -32,6 +32,9 @@ let g:ale_fixers = {
 \ 'sh': ['shfmt'],
 \ 'yaml': ['prettier'],
 \}
+let g:ale_linters = {
+\ 'vue': ['volar']
+\}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_error_str = '💥'
