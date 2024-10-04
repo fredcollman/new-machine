@@ -31,6 +31,7 @@ let g:ale_fixers = {
 \ 'terraform': ['terraform'],
 \ 'sh': ['shfmt'],
 \ 'yaml': ['prettier'],
+\ 'svelte': ['prettier'],
 \}
 let g:ale_linters = {
 \ 'vue': ['volar']
