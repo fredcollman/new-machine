@@ -41,7 +41,8 @@ return require('packer').startup(
     use 'tpope/vim-apathy'
 
     -- linting and fixing
-    use 'dense-analysis/ale'
+    -- use 'dense-analysis/ale'
+    use '~/dev/ale'
 
 
     -- syntax highlighting: JSX, Jenkinsfile and more
@@ -49,6 +50,9 @@ return require('packer').startup(
 
     -- syntax highlighting: Hashicorp Sentinel
     use 'hashicorp/sentinel.vim'
+
+    -- syntax highlight: astro
+    use 'wuelnerdotexe/vim-astro'
 
     -- colour scheme
     use 'tomasr/molokai'

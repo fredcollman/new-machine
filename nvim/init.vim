@@ -24,17 +24,19 @@ let g:ale_fixers = {
 \ 'javascriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
-\ 'typescript': ['prettier'],
-\ 'typescriptreact': ['prettier'],
 \ 'vue': ['prettier'],
-\ 'elixir': ['mix_format'],
-\ 'terraform': ['terraform'],
 \ 'sh': ['shfmt'],
 \ 'yaml': ['prettier'],
 \ 'svelte': ['prettier'],
+\ 'typescript': ['prettier', 'eslint'],
+\ 'typescriptreact': ['eslint'],
+\ 'elixir': ['mix_format'],
+\ 'terraform': ['terraform'],
+\ 'rust': ['rustfmt'],
 \}
 let g:ale_linters = {
-\ 'vue': ['volar']
+\ 'vue': ['volar'],
+\ 'rust': ['analyzer'],
 \}
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
@@ -91,6 +93,9 @@ nnoremap <leader>gb :Git blame<CR>
 
 " MaxMEllon/vim-jsx-pretty installed via vim-polyglot
 let g:vim_jsx_pretty_highlight_close_tag = 1
+
+" https://github.com/wuelnerdotexe/vim-astro#configuration
+let g:astro_typescript = 'enable'
 
 let g:user_emmet_expandabbr_key='<C-e>'
 

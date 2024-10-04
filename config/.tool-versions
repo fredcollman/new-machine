@@ -4,3 +4,5 @@ yarn 1.22.19
 terraform 1.6.0
 pnpm 7.30.0
 vault 1.15.4+ent
+rust 1.66.0
+shellspec 0.28.1

@@ -24,6 +24,7 @@ nvim_lsp.pylsp.setup{
     }
   }
 }
+nvim_lsp.rust_analyzer.setup{}
 nvim_lsp.tsserver.setup{}
 nvim_lsp.bashls.setup{}
 

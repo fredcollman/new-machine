@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+asdf plugin add rust
+asdf install rust latest
+asdf global rust latest
+asdf reshim
+rustup component add rust-analyzer
+rustup component add rust-src

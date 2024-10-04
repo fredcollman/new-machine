@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 if [ $(uname) = "Darwin" ]; then
-  export IS_MAC=1
-  . scripts/install-macos
+	export IS_MAC=1
+	. scripts/install-macos
 else
-  export IS_LINUX=1
-  . scripts/install-linux
+	export IS_LINUX=1
+	. scripts/install-linux
 fi
