@@ -5,116 +5,118 @@ vim.cmd([[
   augroup end
 ]])
 
-return require('packer').startup(
-  -- packages installed at ~/.local/share/nvim/site/pack/packer/start
-  function()
-    -- self-updating
-    use 'wbthomason/packer.nvim'
+return require("packer").startup(
+	-- packages installed at ~/.local/share/nvim/site/pack/packer/start
+	function()
+		-- self-updating
+		use("wbthomason/packer.nvim")
 
-    -- lua utils
-    use 'nvim-lua/plenary.nvim'
+		-- lua utils
+		use("nvim-lua/plenary.nvim")
 
-    --[[
+		--[[
       gcc -> (un)comment out line
       gca} -> (un)comment out (JS) function body
       gcip -> (un)comment paragraphy (Python function body)
     ]]
-    use 'tpope/vim-commentary'
+		use("tpope/vim-commentary")
 
-    --[[
+		--[[
       ysiW" -> add quotes around Word
       ds} -> delete surrounding braces
       cs)] -> convert Python tuple to list
     ]]
-    use 'tpope/vim-surround'
+		use("tpope/vim-surround")
 
-    --[[
+		--[[
       ]q -> go to next in quicklist
       [b -> go to previous buffer
     ]]
-    use 'tpope/vim-unimpaired'
+		use("tpope/vim-unimpaired")
 
-    -- use . to repeat tpope things (surround, switch buffer, ...)
-    use 'tpope/vim-repeat'
+		-- use . to repeat tpope things (surround, switch buffer, ...)
+		use("tpope/vim-repeat")
 
-    -- make absolute imports (e.g. TS ~/) work sensibly
-    use 'tpope/vim-apathy'
+		-- make absolute imports (e.g. TS ~/) work sensibly
+		use("tpope/vim-apathy")
 
-    -- linting and fixing
-    -- use 'dense-analysis/ale'
-    use '~/dev/ale'
+		-- linting and fixing
+		-- use 'dense-analysis/ale'
+		use("dense-analysis/ale")
 
+		-- syntax highlighting: JSX, Jenkinsfile and more
+		use("sheerun/vim-polyglot")
 
-    -- syntax highlighting: JSX, Jenkinsfile and more
-    use 'sheerun/vim-polyglot'
+		-- syntax highlighting: Hashicorp Sentinel
+		use("hashicorp/sentinel.vim")
 
-    -- syntax highlighting: Hashicorp Sentinel
-    use 'hashicorp/sentinel.vim'
+		-- syntax highlight: astro
+		use("wuelnerdotexe/vim-astro")
 
-    -- syntax highlight: astro
-    use 'wuelnerdotexe/vim-astro'
+		-- colour scheme
+		use("tomasr/molokai")
 
-    -- colour scheme
-    use 'tomasr/molokai'
+		-- <C-e> (= user_emmet_expandabbr_key) -> expand HTML shorthand
+		use("mattn/emmet-vim")
 
-    -- <C-e> (= user_emmet_expandabbr_key) -> expand HTML shorthand
-    use 'mattn/emmet-vim'
+		-- <Tab> -> expand snippet
+		use("SirVer/ultisnips")
 
-    -- <Tab> -> expand snippet
-    use 'SirVer/ultisnips'
+		-- fuzzy matching (system util, plus common vim bindings)
+		use({ "junegunn/fzf", run = "./install --bin" })
+		use("junegunn/fzf.vim")
 
-    -- fuzzy matching (system util, plus common vim bindings)
-    use { 'junegunn/fzf', run = './install --bin' }
-    use 'junegunn/fzf.vim'
+		use("luochen1990/rainbow")
+		use("machakann/vim-highlightedyank")
 
-    use 'luochen1990/rainbow'
-    use 'machakann/vim-highlightedyank'
+		-- project-specific config, e.g. set path+=
+		use("tpope/vim-projectionist")
 
-    -- project-specific config, e.g. set path+=
-    use 'tpope/vim-projectionist'
+		-- <leader>gb -> :GBlame -> git blame
+		use("tpope/vim-fugitive")
 
-    -- <leader>gb -> :GBlame -> git blame
-    use 'tpope/vim-fugitive'
+		-- list buffers in UI chrome
+		use("vim-airline/vim-airline")
+		use("vim-airline/vim-airline-themes")
 
-    -- list buffers in UI chrome
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+		-- autocomplete (works in combination with ale and LSPs)
+		-- use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+		-- autocomplete (dedicated alternative via LSP)
+		-- use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
 
-    -- autocomplete (works in combination with ale and LSPs)
-    -- use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
-    -- autocomplete (dedicated alternative via LSP)
-    -- use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
+		-- connects built-in Neovim LSP client to standard LSP servers
+		use("neovim/nvim-lspconfig")
 
-    -- connects built-in Neovim LSP client to standard LSP servers
-    use 'neovim/nvim-lspconfig'
+		-- to manage tools for LSP, DAP, linting (pyright, volar, black, prettier et al)
+		use("williamboman/mason.nvim")
+		--
+		-- to make it easier for mason to manage LSPs (mason can also manage other things)
+		use("williamboman/mason-lspconfig.nvim")
 
-    -- to manage tools for LSP, DAP, linting (pyright, volar, black, prettier et al)
-    use 'williamboman/mason.nvim'
-    --
-    -- to make it easier for mason to manage LSPs (mason can also manage other things)
-    use 'williamboman/mason-lspconfig.nvim'
+		-- show available code actions
+		use("kosayoda/nvim-lightbulb")
 
-    -- show available code actions
-    use 'kosayoda/nvim-lightbulb'
+		-- -- smarter autocomplete
+		-- use 'hrsh7th/nvim-cmp'
+		-- use 'hrsh7th/cmp-buffer'
+		-- use 'hrsh7th/cmp-nvim-lsp'
 
-    -- -- smarter autocomplete
-    -- use 'hrsh7th/nvim-cmp'
-    -- use 'hrsh7th/cmp-buffer'
-    -- use 'hrsh7th/cmp-nvim-lsp'
+		-- wanted by telescope
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+		})
 
-    -- wanted by telescope
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        -- run step doesn't seem to work
-        -- run = ':TSUpdate'
-    }
+		-- fancy search/pickers/sorters
+		use("nvim-telescope/telescope.nvim")
 
-    -- fancy search/pickers/sorters
-    use 'nvim-telescope/telescope.nvim'
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
-    use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
-
-  end
-  )
+		use({
+			"glacambre/firenvim",
+			run = function()
+				vim.fn["firenvim#install"](0)
+			end,
+		})
+	end
+)

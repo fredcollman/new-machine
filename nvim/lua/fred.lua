@@ -1,21 +1,21 @@
 modules = {
-  "./plugins",
-  "./lsp",
-  "./searching",
-  "./snippets",
-  "./treesitter",
+	"./plugins",
+	"./lsp",
+	"./searching",
+	"./snippets",
+	"./treesitter",
 }
 
 function _G.reload_fred_config()
-  for i, mod in pairs(modules) do
-    if (vim.env.NEOVIM_DEBUG ~= nil) then
-      print("Reloading", mod)
-    end
-    if pcall(require, 'plenary.reload') then
-      require('plenary.reload').reload_module(mod)
-    end
-    require(mod)
-  end
+	for i, mod in pairs(modules) do
+		if vim.env.NEOVIM_DEBUG ~= nil then
+			print("Reloading", mod)
+		end
+		if pcall(require, "plenary.reload") then
+			require("plenary.reload").reload_module(mod)
+		end
+		require(mod)
+	end
 end
 
 vim.cmd([[

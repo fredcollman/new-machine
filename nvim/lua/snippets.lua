@@ -1,3 +1,3 @@
-vim.g.UltiSnipsExpandTrigger='<tab>'
+vim.g.UltiSnipsExpandTrigger = "<tab>"
 
-vim.keymap.set('n', '<Leader>s', '<cmd>UltiSnipsEdit<cr>')
+vim.keymap.set("n", "<Leader>s", "<cmd>UltiSnipsEdit<cr>")
