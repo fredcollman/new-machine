@@ -25,7 +25,7 @@ nvim_lsp.pylsp.setup({
 	},
 })
 nvim_lsp.rust_analyzer.setup({})
-nvim_lsp.tsserver.setup({})
+nvim_lsp.ts_ls.setup({})
 nvim_lsp.bashls.setup({})
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
