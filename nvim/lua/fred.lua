@@ -3,6 +3,7 @@ modules = {
   "./lsp",
   "./searching",
   "./snippets",
+  "./treesitter",
 }
 
 function _G.reload_fred_config()

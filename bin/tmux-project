@@ -8,9 +8,9 @@ if [[ -z $full ]]; then
 	exit 0
 fi
 
-friendly=$(basename "$full")
+friendly=$(basename "$full" | tr . _)
 
-if ! tmux has-session -t "$friendly"; then
+if ! tmux has-session -t "$friendly" 2>/dev/null; then
 	tmux new-session -s "$friendly" -c "$full" -d
 fi
 
