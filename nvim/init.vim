@@ -33,6 +33,7 @@ let g:ale_fixers = {
 \ 'elixir': ['mix_format'],
 \ 'terraform': ['terraform'],
 \ 'rust': ['rustfmt'],
+\ 'lua': ['stylua'],
 \}
 let g:ale_linters = {
 \ 'vue': ['volar'],
