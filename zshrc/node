@@ -13,6 +13,6 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 alias y="pnpm" # muscle memory
-alias y+="pnpm install"
-alias yd="pnpm install --dev"
+alias y+="pnpm add"
+alias yd="pnpm add --save-dev"
 ### pnpm end
