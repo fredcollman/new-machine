@@ -1,26 +1,8 @@
 #!/usr/bin/env sh
-scripts/essentials
-. scripts/homebrew
-scripts/zsh
-scripts/asdf
-scripts/jq
-scripts/gnome-tweak-tool
-scripts/gnome-extensions
-scripts/chrome
-scripts/tmux
-scripts/fasd
-scripts/github
-scripts/docker
-scripts/fzf
-scripts/ag
-scripts/ctags
-scripts/direnv
-scripts/cloc
-scripts/neovim
-scripts/python
-scripts/nodejs
-scripts/rust
-scripts/tauri
-scripts/terraform
-scripts/shellspec
-scripts/flatpak
+if [ $(uname) = "Darwin" ]; then
+	export IS_MAC=1
+	. scripts/install-macos
+else
+	export IS_LINUX=1
+	. scripts/install-linux
+fi

@@ -9,6 +9,7 @@ fi
 
 ln -s `pwd`/nvim/init.vim $NEOVIM_DIR/init.vim
 ln -s `pwd`/nvim/lua $NEOVIM_DIR/lua
+ln -s `pwd`/nvim/UltiSnips $NEOVIM_DIR/UltiSnips
 
 git clone https://github.com/k-takata/minpac.git $NEOVIM_DIR/pack/minpac/opt/minpac
 git clone --depth 1 https://github.com/wbthomason/packer.nvim $NEOVIM_PACKAGES_DIR/pack/packer/start/packer.nvim

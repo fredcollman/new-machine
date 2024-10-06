@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# misc formulae to install
+# to calculate::
+#
+#     brew leaves
+
+brew install \
+	caddy \
+	cloc \
+	direnv \
+	fzf \
+	gh \
+	glab \
+	gnupg \
+	jq \
+	neovim \
+	pipx \
+	ripgrep \
+	terraform-docs \
+	tflint \
+	tmux \
+	tree \
+	universal-ctags \
+	wget
+# bats-core \
+# exercism \
+# fasd \
+# gawk \
+# lolcat \
+# luajit-openresty \
+# tmate \

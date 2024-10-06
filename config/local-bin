@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 LOCALBIN_DIR="$HOME/.local/bin"
 mkdir -p "$LOCALBIN_DIR"
-ln -s `pwd`/bin/bookmark-manager.sh "$LOCALBIN_DIR/bm"
-ln -s `pwd`/bin/keepdoing "$LOCALBIN_DIR/kd"
+ln -s $(pwd)/bin/bookmark-manager.sh "$LOCALBIN_DIR/bm"
+ln -s $(pwd)/bin/keepdoing "$LOCALBIN_DIR/kd"
+ln -s $(pwd)/bin/pwgen "$LOCALBIN_DIR/pwgen"
+ln -s $(pwd)/bin/tmux-project "$LOCALBIN_DIR/sesh"

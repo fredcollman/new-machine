@@ -2,7 +2,17 @@
 asdf plugin add nodejs
 asdf plugin add yarn
 asdf plugin add pnpm
+<<<<<<< HEAD
 asdf plugin add bun
 asdf install nodejs lts
 asdf install pnpm latest
 asdf install bun latest
+=======
+asdf install nodejs 18.18.0
+asdf install yarn latest
+asdf install pnpm latest
+pnpm install --global \
+  neovim \
+  diagnostic-languageserver \
+  typescript-language-server
+>>>>>>> merged

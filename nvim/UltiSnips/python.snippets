@@ -1,0 +1,15 @@
+snippet tc
+from unittest import TestCase
+
+class $1Test(TestCase):
+    def test_$2(self) -> None:
+        x
+endsnippet
+
+snippet cqc
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
+
+with CaptureQueriesContext(connection) as ctx:
+    print(ctx.captured_queries)
+endsnippet

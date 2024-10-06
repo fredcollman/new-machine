@@ -4,3 +4,5 @@ config/variables
 downloads/
 zshrc/.zcompdump
 zshrc/local-overrides
+zshrc/.zsh_history
+zshrc/.zsh_sessions
