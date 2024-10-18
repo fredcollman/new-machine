@@ -1,6 +1,17 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim#setup order is important!
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		"lua_ls",
+		"volar",
+		"ruff_lsp",
+		"pyright",
+		"pylsp",
+		"rust_analyzer",
+		"ts_ls",
+		"bashls",
+	},
+})
 
 local nvim_lsp = require("lspconfig")
 
@@ -25,8 +36,9 @@ nvim_lsp.pylsp.setup({
 	},
 })
 nvim_lsp.rust_analyzer.setup({})
-nvim_lsp.tsserver.setup({})
+nvim_lsp.ts_ls.setup({})
 nvim_lsp.bashls.setup({})
+nvim_lsp.lua_ls.setup({})
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)

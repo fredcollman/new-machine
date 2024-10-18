@@ -29,7 +29,7 @@ let g:ale_fixers = {
 \ 'yaml': ['prettier'],
 \ 'svelte': ['prettier'],
 \ 'typescript': ['prettier', 'eslint'],
-\ 'typescriptreact': ['eslint'],
+\ 'typescriptreact': ['prettier', 'eslint'],
 \ 'elixir': ['mix_format'],
 \ 'terraform': ['terraform'],
 \ 'rust': ['rustfmt'],

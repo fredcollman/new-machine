@@ -23,3 +23,35 @@ endsnippet
 snippet noany
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 endsnippet
+
+snippet error
+class $1 extends Data.TaggedError(
+	"$2/$1"
+)<{
+	cause: unknown;
+	message: string;
+}> {
+	static of = (cause: unknown): $1 => new $1({ cause, message: "$3" });
+}
+endsnippet
+
+snippet desc
+import { describe, expect, it } from "vitest";
+
+describe("$1", () => {
+	it("$2", () => {
+		expect(1).toBe(0)
+	});
+});
+endsnippet
+
+snippet etest
+await pipe(
+	Effect.void,
+	Effect.tap(() => {
+		expect(1).toBe(0);
+	}),
+	runTest
+);
+endsnippet
+
