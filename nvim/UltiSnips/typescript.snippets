@@ -1,5 +1,5 @@
 snippet eg
-Effect.gen(function* (_) {
+Effect.gen(function* () {
 	$1
 })
 endsnippet
@@ -35,6 +35,12 @@ class $1 extends Data.TaggedError(
 }
 endsnippet
 
+snippet tag
+export class $1 extends Context.Tag(
+	"$1"
+)<$1, $2>() {}
+endsnippet
+
 snippet desc
 import { describe, expect, it } from "vitest";
 
@@ -55,3 +61,11 @@ await pipe(
 );
 endsnippet
 
+snippet ite
+it.effect("$1", () =>
+	Effect.gen(function* () {
+		yield* Effect.void;
+		expect(1).toBe(0);
+	})
+);
+endsnippet

@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
 		"volar",
-		"ruff_lsp",
+		"ruff",
 		"pyright",
 		"pylsp",
 		"rust_analyzer",
