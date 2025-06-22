@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# misc formulae to install
+# to calculate::
+#
+#     brew leaves
+
+brew install \
+  glab \
+  graphviz \
+  neovim \
+  ripgrep \
+  universal-ctags
+# icu4c \
+# libnsl \

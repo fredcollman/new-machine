@@ -16,6 +16,7 @@ scripts/ag
 scripts/ctags
 scripts/direnv
 scripts/cloc
+scripts/brew-leaves-linux
 scripts/neovim
 scripts/python
 scripts/nodejs
