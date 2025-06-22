@@ -4,6 +4,14 @@ Effect.gen(function* () {
 })
 endsnippet
 
+snippet ef
+const $1 = Effect.fn("$1")(function* (args: object) {
+  yield* Effect.void
+	$2
+})
+endsnippet
+
+
 snippet yy
 yield* _($1)
 endsnippet
@@ -69,3 +77,31 @@ it.effect("$1", () =>
 	})
 );
 endsnippet
+
+snippet hint
+//      ┌─── $1
+//      ▼
+endsnippet
+
+snippet ie
+import * as $1 from 'effect/$1'
+endsnippet
+
+snippet iee
+import * as Effect from 'effect/Effect'
+endsnippet
+
+snippet ieo
+import * as O from 'effect/Option'
+endsnippet
+
+snippet ies
+import * as S from 'effect/Schema'
+endsnippet
+
+snippet snip
+// snippet-start: $1
+$2
+// snippet-end: $1
+endsnippet
+
