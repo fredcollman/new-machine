@@ -4,6 +4,12 @@ Effect.gen(function* (_) {
 })
 endsnippet
 
+snippet ef
+const $1 = Effect.fn("$1")(function* ($2) {
+	yield* Effect.void
+})
+endsnippet
+
 snippet yy
 yield* _($1)
 endsnippet
@@ -22,4 +28,26 @@ endsnippet
 
 snippet noany
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+endsnippet
+
+snippet tag
+export class $1 extends Context.Tag('$1')<$1, $2>() {
+	static Live = Layer.effect(this, $3);
+}
+endsnippet
+
+snippet ie
+import * as $1 from 'effect/$1'
+endsnippet
+
+snippet iee
+import * as Effect from 'effect/Effect'
+endsnippet
+
+snippet ieo
+import * as O from 'effect/Option'
+endsnippet
+
+snippet ies
+import * as S from 'effect/Schema'
 endsnippet

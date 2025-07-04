@@ -13,3 +13,71 @@ from django.test.utils import CaptureQueriesContext
 with CaptureQueriesContext(connection) as ctx:
     print(ctx.captured_queries)
 endsnippet
+
+snippet log
+import logging
+logger = logging.getLogger(__name__)
+endsnippet
+
+snippet admin
+@admin.register($1)
+class $1Admin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "name",
+        "created_at",
+    )
+    list_filter = ("created_at",)
+    search_fields = ("name",)
+    readonly_fields = (
+        "created_at",
+        "created_by",
+    )
+endsnippet
+
+snippet router
+from django.urls import include, path
+from rest_framework.routers import SimpleRouter
+
+from . import views
+
+router = SimpleRouter()
+router.register("$1", views.$2ViewSet, basename="$1")
+
+urlpatterns = [
+    path("", include(router.urls)),
+]
+endsnippet
+
+snippet viewset
+from rest_framework.viewsets import GenericViewSet
+from .assistants import $1Assistant
+from .models import $1
+from .serializers import $1Serializer
+
+class $1ViewSet(GenericViewSet):
+    serializer_class = $1Serializer
+    queryset = $1.objects.all()
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context["assistant"] = $1Assistant()
+        return context
+endsnippet
+
+snippet ser
+from rest_framework import serializers
+
+from .assistants import $1Assistant
+from .models import $1
+
+
+class $1Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = $1
+        fields = ($2)
+
+    @property
+    def _assistant(self) -> $1Assistant:
+        return self.context["assistant"]
+endsnippet
