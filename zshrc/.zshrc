@@ -10,6 +10,7 @@
 . $ZDOTDIR/docker-compose
 . $ZDOTDIR/brew
 . $ZDOTDIR/terraform
+. $ZDOTDIR/mise
 
 if [ -f $ZDOTDIR/local-overrides ]; then
   . $ZDOTDIR/local-overrides

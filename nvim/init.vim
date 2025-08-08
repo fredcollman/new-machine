@@ -23,7 +23,7 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'javascriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
-\ 'css': ['prettier'],
+\ 'css': ['prettier', 'dprint'],
 \ 'vue': ['prettier'],
 \ 'sh': ['shfmt'],
 \ 'yaml': ['prettier'],
@@ -34,6 +34,7 @@ let g:ale_fixers = {
 \ 'terraform': ['terraform'],
 \ 'rust': ['rustfmt'],
 \ 'lua': ['stylua'],
+\ 'astro': ['dprint'],
 \}
 let g:ale_linters = {
 \ 'vue': ['volar'],
@@ -168,3 +169,8 @@ let g:firenvim_config = {
     \ }
 \ }
 
+
+
+
+" TODO could this happen elsewhere?
+autocmd BufWritePre *.astro lua vim.lsp.buf.format({ async = false })

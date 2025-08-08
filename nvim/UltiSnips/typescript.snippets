@@ -105,3 +105,15 @@ $2
 // snippet-end: $1
 endsnippet
 
+snippet svc
+export class $1 extends Effect.Service<$1>()("$1", {
+	dependencies: [],
+	effect: Effect.gen(function* () {
+		const todo = yield* Effect.succeed(true)
+		return {
+		todo
+		}
+	})
+}) {}
+endsnippet
+

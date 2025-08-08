@@ -10,13 +10,14 @@ require("mason-lspconfig").setup({
 		"rust_analyzer",
 		"ts_ls",
 		"bashls",
+		"dprint",
 	},
 })
 
 local nvim_lsp = require("lspconfig")
 
 nvim_lsp.volar.setup({})
-nvim_lsp.ruff_lsp.setup({})
+nvim_lsp.ruff.setup({})
 nvim_lsp.pyright.setup({})
 nvim_lsp.pylsp.setup({
 	settings = {
@@ -39,6 +40,29 @@ nvim_lsp.rust_analyzer.setup({})
 nvim_lsp.ts_ls.setup({})
 nvim_lsp.bashls.setup({})
 nvim_lsp.lua_ls.setup({})
+-- vim.lsp.enable recommended for nvim >= 0.11
+vim.lsp.config["dprint"] = {
+	cmd = { "dprint", "lsp" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"jsonc",
+		"markdown",
+		"python",
+		"toml",
+		"rust",
+		"roslyn",
+		"graphql",
+		"astro",
+		"css",
+	},
+	root_markers = { "dprint.json", ".dprint.json", "dprint.jsonc", ".dprint.jsonc" },
+	settings = {},
+}
+vim.lsp.enable("dprint")
 
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
