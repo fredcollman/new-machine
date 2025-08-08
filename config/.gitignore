@@ -8,3 +8,6 @@ tags
 *.nogit*
 .ropeproject/
 crash.*.log
+fredhacks
+.data/
+.DS_Store

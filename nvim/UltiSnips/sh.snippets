@@ -1,0 +1,7 @@
+snippet check
+if [ -z "${$1}" ]; then
+	echo "Variable $1 must be set."
+	exit 1
+fi
+endsnippet
+

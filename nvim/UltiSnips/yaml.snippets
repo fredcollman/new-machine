@@ -1,0 +1,50 @@
+snippet compose
+x-base: &base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  links:
+    - db:db
+  environment:
+    - EXAMPLE=1
+  volumes:
+    - .data/logs/:/var/log/example/
+    - .:/app
+  command:
+    - "python"
+    - "-c"
+    - "'import this'"
+
+services:
+  db:
+    image: "postgres:16"
+    ports:
+      - "8452:5432"
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=example
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=example
+    volumes:
+      - ./db_dumps/:/db_dumps/
+      - .data/postgres:/var/lib/postgresql/data
+
+  pgadmin:
+    image: "dpage/pgadmin4:latest"
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=fred.collman@nanoporetech.com
+      - PGADMIN_DEFAULT_PASSWORD=changeme
+      - PGADMIN_CONFIG_ENABLE_PSQL=True
+    volumes:
+      - .data/pgadmin:/var/lib/pgadmin
+
+  app:
+    <<: *base
+    ports:
+      - "8000:8000"
+    restart: always
+    command:
+      - "python"
+endsnippet
