@@ -23,3 +23,29 @@ endsnippet
 snippet ic
 import $1 from '$lib/components/$1.svelte'
 endsnippet
+
+snippet c
+<script lang="ts">
+import Debug from '$lib/components/Debug.svelte'
+
+interface Props {
+	value: string
+}
+
+const {value}: Props = $props()
+</script>
+
+<div class="todo">
+	<Debug {value} />
+</div>
+
+<style>
+.todo {
+	border: 1px solid red;
+}
+</style>
+endsnippet
+
+snippet sl
+import '@shoelace-style/shoelace/dist/components/$1/$1.js';
+endsnippet

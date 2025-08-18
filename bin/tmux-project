@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 # see https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 
-full=$(find ~/dev -type d -mindepth 1 -maxdepth 1 | fzf --query "$1" --select-1)
+full=$(find ~/dev -mindepth 1 -maxdepth 1 -type d | fzf --query "$1" --select-1)
 
-if [[ -z $full ]]; then
-	echo "no director selected"
+if [ -z "$full" ]; then
+	echo "no directory selected"
 	exit 0
 fi
 
