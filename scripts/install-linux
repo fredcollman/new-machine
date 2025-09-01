@@ -25,3 +25,4 @@ scripts/tauri
 scripts/terraform
 scripts/shellspec
 scripts/flatpak
+scripts/nix
