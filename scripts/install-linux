@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+scripts/essentials
+. scripts/homebrew
+scripts/zsh
+scripts/asdf
+scripts/jq
+scripts/gnome-tweak-tool
+scripts/gnome-extensions
+scripts/chrome
+scripts/tmux
+scripts/fasd
+scripts/github
+scripts/docker
+scripts/fzf
+scripts/ag
+scripts/ctags
+scripts/direnv
+scripts/cloc
+scripts/brew-leaves-linux
+scripts/neovim
+scripts/python
+scripts/nodejs
+scripts/rust
+scripts/tauri
+scripts/terraform
+scripts/shellspec
+scripts/flatpak
+scripts/nix

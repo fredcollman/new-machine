@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+# see https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+full=$(find ~/dev -mindepth 1 -maxdepth 1 -type d | fzf --query "$1" --select-1)
+
+if [ -z "$full" ]; then
+	echo "no directory selected"
+	exit 0
+fi
+
+friendly=$(basename "$full" | tr . _)
+
+if ! tmux has-session -t="$friendly" 2>/dev/null; then
+	tmux new-session -s "$friendly" -c "$full" -d
+fi
+
+tmux switch-client -t "$friendly"

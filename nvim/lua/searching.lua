@@ -1,7 +1,8 @@
-local set_keymap = function(mode, keys, cmd)
-  vim.api.nvim_set_keymap(mode, keys, cmd, { noremap = true, silent = true })
-end
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>f", builtin.git_files)
+vim.keymap.set("n", "<leader>b", builtin.buffers)
+vim.keymap.set("n", "<leader>/", builtin.live_grep)
 
-set_keymap('n', '<leader>f', [[<cmd>lua require('telescope.builtin').git_files()<CR>]])
-set_keymap('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
-set_keymap('n', '<leader>/', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]])
+-- open file under cursor in vertical split
+vim.keymap.set("n", "<leader>gf", "<cmd>:vsplit <cfile><cr>")
+vim.keymap.set("n", "<leader>gd", "<c-w><c-v><c-]>")

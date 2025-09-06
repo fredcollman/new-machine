@@ -10,6 +10,7 @@
 . $ZDOTDIR/docker-compose
 . $ZDOTDIR/brew
 . $ZDOTDIR/terraform
+. $ZDOTDIR/mise
 
 if [ -f $ZDOTDIR/local-overrides ]; then
   . $ZDOTDIR/local-overrides
@@ -24,4 +25,4 @@ fi
 # run at the end for safety
 . $ZDOTDIR/plugins
 
-export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Is)"
+export DEBUG_SOURCED_ZDOTDIR_ZSHRC="\$ZDOTDIR/.zshrc at $(date -Iseconds)"

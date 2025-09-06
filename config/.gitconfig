@@ -24,6 +24,7 @@
   cloc = !cloc --vcs=git
   rev = !glab mr checkout
   br = !nicebranch
+  root = rev-parse --show-toplevel
 [url "https://github.com/"]
   insteadOf = hub:
 [url "https://github.com/fredcollman/"]
@@ -32,3 +33,5 @@
   insteadOf = me:
 [include]
   path = ~/local.gitconfig
+[blame]
+  ignoreRevsFile = .git-blame-ignore-revs

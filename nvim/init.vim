@@ -21,24 +21,45 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \ 'python': ['isort', 'black', 'autoflake'],
 \ 'javascript': ['prettier'],
-\ 'javascriptreact': ['prettier'],
+\ 'javascriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
-\ 'css': ['prettier'],
+\ 'css': ['prettier', 'dprint'],
+\ 'vue': ['prettier'],
+\ 'sh': ['shfmt'],
+\ 'yaml': ['prettier'],
+\ 'svelte': ['dprint'],
 \ 'typescript': ['prettier', 'eslint'],
-\ 'typescriptreact': ['eslint'],
+\ 'typescriptreact': ['prettier', 'eslint'],
 \ 'elixir': ['mix_format'],
 \ 'terraform': ['terraform'],
 \ 'rust': ['rustfmt'],
+\ 'lua': ['stylua'],
+\ 'astro': ['dprint'],
 \}
 let g:ale_linters = {
+\ 'vue': ['volar'],
 \ 'rust': ['analyzer'],
+\} 
+" deno gets too noisy about imports when not using deno as package manager
+let g:ale_linters_ignore = {
+\   'typescript': ['deno'],
+\   'typescriptreact': ['deno'],
 \}
+
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_warning_str = '⚠️'
 let g:ale_echo_msg_error_str = '💥'
 let g:ale_echo_msg_format = '%severity% %linter% says %s'
 let g:ale_completion_enabled = 1
 " let g:ale_completion_delay = 1
+
+" until I can figure out how to get LSP hover working
+let g:ale_disable_lsp = 0
+let g:ale_python_pyright_config = {
+\ 'pyright': {
+\   'disableLanguageServices': v:true,
+\ },
+\}
 
 " packadd deoplete.nvim
 " call deoplete#custom#option('sources', {
@@ -94,10 +115,17 @@ let g:rainbow_active = 1
 " machakann/vim-highlightedyank show yanked region
 let g:highlightedyank_highlight_duration = 350
 
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
 " fzf.vim shortcuts
 " nnoremap <leader>f :GFiles<CR>
 " nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>u :Ag <C-R><C-W>\b<CR>
+nnoremap <leader>u :Rg <C-R><C-W>\b<CR>
+" muscle memory: clobber Ag to use Rg instead
+cabbrev Ag Rg
+" and deal with casing issues
+cabbrev ag Rg
 
 " navigate smoothly from terminal mode/between windows
 " via https://thoughtbot.com/upcase/videos/neovim-creating-mappings-for-terminal
@@ -147,3 +175,9 @@ let g:firenvim_config = {
     \ }
 \ }
 
+
+
+
+" TODO could this happen elsewhere?
+autocmd BufWritePre *.astro lua vim.lsp.buf.format({ async = false })
+" autocmd BufWritePre *.svelte lua vim.lsp.buf.format({ async = false })

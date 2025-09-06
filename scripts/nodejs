@@ -1,5 +1,15 @@
 #!/usr/bin/env sh
 asdf plugin add nodejs
 asdf plugin add yarn
+asdf plugin add pnpm
+asdf plugin add bun
+asdf plugin add deno
 asdf install nodejs lts
-asdf install yarn latest
+# asdf install yarn latest
+asdf install pnpm latest
+asdf install bun latest
+# asdf install deno latest
+pnpm install --global \
+	neovim \
+	diagnostic-languageserver \
+	typescript-language-server

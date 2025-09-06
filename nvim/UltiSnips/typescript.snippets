@@ -1,0 +1,122 @@
+snippet eg
+Effect.gen(function* () {
+	$1
+})
+endsnippet
+
+snippet ef
+const $1 = Effect.fn("$1")(function* ($2) {
+	yield* Effect.void
+})
+endsnippet
+
+snippet yy
+yield* _($1)
+endsnippet
+
+snippet iv
+import { describe, expect, it } from 'vitest'
+endsnippet
+
+snippet em
+Effect.map($1)
+endsnippet
+
+snippet efm
+Effect.flatMap($1)
+endsnippet
+
+snippet noany
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+endsnippet
+
+snippet error
+class $1 extends Data.TaggedError(
+	"$2/$1"
+)<{
+	cause: unknown;
+	message: string;
+}> {
+	static of = (cause: unknown): $1 => new $1({ cause, message: "$3" });
+}
+endsnippet
+
+snippet tag
+export class $1 extends Context.Tag(
+	"$1"
+)<$1, $2>() {}
+endsnippet
+
+snippet desc
+import { describe, expect, it } from "vitest";
+
+describe("$1", () => {
+	it("$2", () => {
+		expect(1).toBe(0)
+	});
+});
+endsnippet
+
+snippet etest
+await pipe(
+	Effect.void,
+	Effect.tap(() => {
+		expect(1).toBe(0);
+	}),
+	runTest
+);
+endsnippet
+
+snippet ite
+it.effect("$1", () =>
+	Effect.gen(function* () {
+		yield* Effect.void;
+		expect(1).toBe(0);
+	})
+);
+endsnippet
+
+snippet hint
+//      ┌─── $1
+//      ▼
+endsnippet
+
+snippet ie
+import * as $1 from 'effect/$1'
+endsnippet
+
+snippet iee
+import * as Effect from 'effect/Effect'
+endsnippet
+
+snippet ieo
+import * as O from 'effect/Option'
+endsnippet
+
+snippet ies
+import * as S from 'effect/Schema'
+endsnippet
+
+snippet snip
+// snippet-start: $1
+$2
+// snippet-end: $1
+endsnippet
+
+snippet svc
+export class $1 extends Effect.Service<$1>()("$1", {
+	dependencies: [],
+	effect: Effect.gen(function* () {
+		const todo = yield* Effect.succeed(true)
+		return {
+		todo
+		}
+	})
+}) {}
+endsnippet
+
+snippet deprecate
+/**
+ * @deprecated $1
+ */
+endsnippet
