@@ -27,7 +27,7 @@ let g:ale_fixers = {
 \ 'vue': ['prettier'],
 \ 'sh': ['shfmt'],
 \ 'yaml': ['prettier'],
-\ 'svelte': ['prettier'],
+\ 'svelte': ['dprint'],
 \ 'typescript': ['prettier', 'eslint'],
 \ 'typescriptreact': ['prettier', 'eslint'],
 \ 'elixir': ['mix_format'],
@@ -180,3 +180,4 @@ let g:firenvim_config = {
 
 " TODO could this happen elsewhere?
 autocmd BufWritePre *.astro lua vim.lsp.buf.format({ async = false })
+" autocmd BufWritePre *.svelte lua vim.lsp.buf.format({ async = false })
