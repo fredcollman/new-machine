@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/fred/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/mason-org/mason.nvim"
+  },
   molokai = {
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme molokai\bcmd\bvim\0" },
     loaded = true,

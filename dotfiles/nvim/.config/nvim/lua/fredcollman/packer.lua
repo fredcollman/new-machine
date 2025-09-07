@@ -35,4 +35,9 @@ return require('packer').startup(function(use)
 
   -- git blame etc
   use('tpope/vim-fugitive')
+
+  -- install LSPs
+  use('mason-org/mason.nvim')
+  -- for neovim >= 0.11 mason-lspconfig is no longer necessary
+
 end)
