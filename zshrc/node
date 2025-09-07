@@ -5,7 +5,7 @@
 # alias y+="yarn add"
 # alias yd="yarn add --dev"
 
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 ### yarn end
 
 ### pnpm
