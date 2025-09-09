@@ -1,2 +1,6 @@
 #!/usr/bin/env sh
 flatpak install flathub app.zen_browser.zen
+
+# https://docs.zen-browser.app/guides/1password
+sudo mkdir -p /etc/1password
+echo "zen-bin" | sudo tee -a /etc/1password/custom_allowed_browsers

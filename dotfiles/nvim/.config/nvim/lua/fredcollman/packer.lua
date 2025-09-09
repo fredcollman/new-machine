@@ -40,5 +40,21 @@ return require('packer').startup(function(use)
   -- install LSPs
   use('mason-org/mason.nvim')
   -- for neovim >= 0.11 mason-lspconfig is no longer necessary
+  
+  --[[
+    ysiW" -> add quotes around Word
+    ds} -> delete surrounding braces
+    cs)] -> convert Python tuple to list
+  ]]
+  use('tpope/vim-surround')
+
+  -- connects built-in Neovim LSP client to standard LSP servers
+  use('neovim/nvim-lspconfig')
+
+  -- status line, replaces vim-airline
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
 end)
