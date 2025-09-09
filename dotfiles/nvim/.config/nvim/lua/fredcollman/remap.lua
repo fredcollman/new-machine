@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>v", function() 
+vim.keymap.set("n", "<leader>v", function()
   vim.cmd.edit(os.getenv("MYVIMRC"))
 end)
 
@@ -18,14 +18,19 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>m", function()
+  local dir = vim.fn.expand("%:h")
+  local escaped = vim.fn.shellescape(dir)
+  vim.cmd("!mkdir -p " .. escaped)
+end)
 
 -- Esc -> exit terminal mode, with escape hatch
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("t", "<A-Esc>", "<Esc>")
 -- quickly switch windows using alt
-vim.keymap.set({"n", "t"}, "<A-h>", "<C-\\><C-n><C-w>h")
-vim.keymap.set({"n", "t"}, "<A-j>", "<C-\\><C-n><C-w>j")
-vim.keymap.set({"n", "t"}, "<A-k>", "<C-\\><C-n><C-w>k")
-vim.keymap.set({"n", "t"}, "<A-l>", "<C-\\><C-n><C-w>l")
+vim.keymap.set({ "n", "t" }, "<A-h>", "<C-\\><C-n><C-w>h")
+vim.keymap.set({ "n", "t" }, "<A-j>", "<C-\\><C-n><C-w>j")
+vim.keymap.set({ "n", "t" }, "<A-k>", "<C-\\><C-n><C-w>k")
+vim.keymap.set({ "n", "t" }, "<A-l>", "<C-\\><C-n><C-w>l")
 
 vim.keymap.set("n", "<leader>e", function() vim.cmd.edit(".env") end)

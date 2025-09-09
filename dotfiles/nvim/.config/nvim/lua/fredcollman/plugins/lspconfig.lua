@@ -7,6 +7,8 @@ return {
       'ruff',
       'dprint',
       'lua_ls',
+      'ts_ls',
+      'svelte',
     })
 
     -- https://gpanders.com/blog/whats-new-in-neovim-0-11/
@@ -30,14 +32,14 @@ return {
         -- https://gpanders.com/blog/whats-new-in-neovim-0-11/
         -- autocomplete on every keystroke?!
         -- may want to disable
-        if client:supports_method('textDocument/completion') then
-          vim.lsp.completion.enable(true, client.id, ev.buf, {
-            autotrigger = true,
-            convert = function(item)
-              return { abbr = item.label:gsub('%b()', '') }
-            end,
-          })
-        end
+        -- if client:supports_method('textDocument/completion') then
+        --   vim.lsp.completion.enable(true, client.id, ev.buf, {
+        --     autotrigger = true,
+        --     convert = function(item)
+        --       return { abbr = item.label:gsub('%b()', '') }
+        --     end,
+        --   })
+        -- end
 
         -- https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/
         -- Auto-format ("lint") on save.
