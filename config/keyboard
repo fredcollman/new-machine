@@ -5,4 +5,4 @@
 # for this session
 setxkbmap -option caps:swapescape
 # for all sessions
-echo "setxkbmap -option caps:swapescape" >>~/.profile
+echo "setxkbmap -option caps:swapescape" >>~/.zprofile

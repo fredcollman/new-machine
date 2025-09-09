@@ -25,4 +25,5 @@ scripts/neovim
 # scripts/terraform
 # scripts/shellspec
 scripts/flatpak
+scripts/zen-browser
 scripts/nix

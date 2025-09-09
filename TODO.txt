@@ -1,0 +1,4 @@
+- [ ] fix apt install (broken packages?)
+- [ ] move zshrc to stow
+- [ ] consider ansible for lineinfile et al?
+- [ ] export zen/firefox settings
