@@ -15,3 +15,11 @@ vim.opt.undofile = true
 -- vim.opt.incsearch = true
 
 vim.g.mapleader = " "
+
+-- ignore case for search, unless search is mixed case
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- show line numbers relative to current line
+vim.opt.number = true
+vim.opt.relativenumber = true
