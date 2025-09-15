@@ -41,7 +41,7 @@ return {
               format = {
                 enable = false,
               }
-            }
+            },
           }
         }
       },
@@ -92,7 +92,17 @@ return {
             group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
             buffer = ev.buf,
             callback = function()
-              vim.lsp.buf.format({ async = false, bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
+              vim.lsp.buf.format({
+                async = false,
+                bufnr = ev.buf,
+                id = client.id,
+                timeout_ms = 1000,
+                -- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save#choosing-a-client-for-formatting
+                filter = function(c)
+                  -- print(c.name) -- for debugging
+                  return c.name ~= 'ts_ls' -- use dprint instead of ts_ls for formatting
+                end
+              })
             end,
           })
         end
