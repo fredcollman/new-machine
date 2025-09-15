@@ -111,7 +111,11 @@ export class $1 extends Effect.Service<$1>()("$1", {
 		return {
 		todo
 		}
-	})
+	}).pipe(
+		Effect.annotateLogs({
+			service: "$1",
+		}),
+	)
 }) {}
 endsnippet
 
