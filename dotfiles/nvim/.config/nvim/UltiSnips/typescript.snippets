@@ -104,7 +104,9 @@ $2
 endsnippet
 
 snippet svc
-export class $1 extends Effect.Service<$1>()("$1", {
+const PACKAGE = "$2"
+const TAG = \`${PACKAGE}/$1\`
+export class $1 extends Effect.Service<$1>()(TAG, {
 	dependencies: [],
 	effect: Effect.gen(function* () {
 		const todo = yield* Effect.succeed(true)
@@ -113,7 +115,7 @@ export class $1 extends Effect.Service<$1>()("$1", {
 		}
 	}).pipe(
 		Effect.annotateLogs({
-			service: "$1",
+			service: TAG
 		}),
 	)
 }) {}
