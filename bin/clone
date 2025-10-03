@@ -1,2 +1,6 @@
-#!/usr/bin/env sh
-gh repo clone "$1" "$1"
+#!/bin/bash
+
+url=$1
+path="$(echo $url | grep / | cut -d/ -f4-)"
+
+gh repo clone "$path" "$path"
