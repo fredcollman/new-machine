@@ -134,3 +134,29 @@ snippet deprecate
  * @deprecated $1
  */
 endsnippet
+
+snippet transform
+export const $1 = S.transformOrFail(
+	$2,
+	$3,
+	{
+		encode: (actual, _, ast) =>
+			ParseResult.fail(
+				new ParseResult.Forbidden(
+					ast,
+					actual,
+					"TODO $1.encode",
+				),
+			),
+		decode: (actual, _, ast) =>
+			ParseResult.fail(
+				new ParseResult.Forbidden(
+					ast,
+					actual,
+					"TODO $1.decode",
+				),
+			),
+		strict: true
+	},
+);
+endsnippet

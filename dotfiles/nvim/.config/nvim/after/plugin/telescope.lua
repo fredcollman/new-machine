@@ -15,7 +15,10 @@ vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = 'Telescope live gre
 
 -- Primeagen's alternative project search
 vim.keymap.set('n', '<leader>ps', function()
-	builtin.grep_string({
-			search = vim.fn.input("Grep > ")
-		});
-	end)
+  builtin.grep_string({
+    search = vim.fn.input("Grep > ")
+  });
+end)
+
+-- old: nnoremap <leader>u :Rg <C-R><C-W>\b<CR>
+vim.keymap.set('n', '<leader>u', builtin.grep_string, { desc = 'Telescope grep under cursor' })

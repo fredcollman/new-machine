@@ -9,6 +9,9 @@ return {
       'ts_ls',
       'dprint',
       'svelte',
+      'astro',
+      -- TODO eslint: only on save, too noisy otherwise!
+      -- 'eslint',
     })
 
     -- -- https://gpanders.com/blog/whats-new-in-neovim-0-11/
@@ -30,6 +33,15 @@ return {
             convertTabsToSpaces = false
           },
         }
+      },
+      filetypes = {
+        'javascript',
+        'javascriptreact',
+        'javascript.jsx',
+        'typescript',
+        'typescriptreact',
+        'typescript.tsx',
+        'astro'
       }
     })
 
