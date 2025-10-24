@@ -6,7 +6,9 @@ return {
       'pyright',
       'ruff',
       'lua_ls',
-      'ts_ls',
+      -- use vtsls instead
+      -- 'ts_ls',
+      'vtsls',
       'dprint',
       'svelte',
       'astro',
@@ -26,12 +28,20 @@ return {
 
     vim.diagnostic.config({ virtual_lines = true })
 
-    vim.lsp.config("ts_ls", {
+    vim.lsp.config("vtsls", {
       settings = {
         typescript = {
+          tsserver = {
+            -- https://github.com/yioneko/vtsls?tab=readme-ov-file#typescript-plugin-not-activated
+            pluginPaths = { "./node_modules" }
+          },
           format = {
             convertTabsToSpaces = false
           },
+        },
+        vtsls = {
+          -- https://github.com/yioneko/vtsls?tab=readme-ov-file#typescript-plugin-not-activated
+          autoUseWorkspaceTsdk = true
         }
       },
       filetypes = {
