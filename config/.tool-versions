@@ -1,5 +1,5 @@
 python    latest
 nodejs    22.19.0
 terraform 1.6.0
-pnpm      9.12.0
+pnpm      latest
 rust      1.66.0

@@ -160,3 +160,11 @@ export const $1 = S.transformOrFail(
 	},
 );
 endsnippet
+
+snippet load
+import type { PageLoad } from "./$types";
+
+export const load: PageLoad = (event) => {
+	return {}
+}
+endsnippet
