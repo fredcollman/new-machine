@@ -21,7 +21,7 @@ return {
 
         -- not needed (dprint)
         -- null_ls.builtins.formatting.prettier,
-      }
+      },
     })
   end
 }

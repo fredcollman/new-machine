@@ -41,7 +41,12 @@ return {
         },
         vtsls = {
           -- https://github.com/yioneko/vtsls?tab=readme-ov-file#typescript-plugin-not-activated
-          autoUseWorkspaceTsdk = true
+          autoUseWorkspaceTsdk = true,
+          typescript = {
+            format = {
+              convertTabsToSpaces = false
+            },
+          }
         }
       },
       filetypes = {
@@ -118,11 +123,12 @@ return {
                 async = false,
                 bufnr = ev.buf,
                 id = client.id,
-                timeout_ms = 1000,
+                -- timeout_ms = 1000,
                 -- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save#choosing-a-client-for-formatting
                 filter = function(c)
                   -- print(c.name) -- for debugging
-                  return c.name ~= 'ts_ls' -- use dprint instead of ts_ls for formatting
+                  -- use dprint instead of ts_ls for formatting
+                  return c.name ~= 'vtsls' and c.name ~= "null-ls"
                 end
               })
             end,
