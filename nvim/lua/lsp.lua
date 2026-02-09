@@ -3,7 +3,7 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"volar",
+		-- "volar",
 		"ruff",
 		"pyright",
 		"pylsp",
@@ -16,7 +16,7 @@ require("mason-lspconfig").setup({
 
 local nvim_lsp = require("lspconfig")
 
-nvim_lsp.volar.setup({})
+-- nvim_lsp.volar.setup({})
 nvim_lsp.ruff.setup({})
 nvim_lsp.pyright.setup({})
 nvim_lsp.pylsp.setup({
@@ -84,8 +84,37 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 		vim.keymap.set("n", "<leader>cu", vim.lsp.buf.references, opts)
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+
+		local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+		-- https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/
+		-- Auto-format ("lint") on save.
+		-- Usually not needed if server supports "textDocument/willSaveWaitUntil".
+		if not client:supports_method('textDocument/willSaveWaitUntil')
+				and client:supports_method('textDocument/formatting') then
+			vim.api.nvim_create_autocmd('BufWritePre', {
+				group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
+				buffer = ev.buf,
+				callback = function()
+					vim.lsp.buf.format({
+						async = false,
+						bufnr = ev.buf,
+						id = client.id,
+						-- timeout_ms = 1000,
+						-- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save#choosing-a-client-for-formatting
+						filter = function(c)
+							-- print(c.name) -- for debugging
+							-- use dprint instead of ts_ls for formatting
+							return c.name ~= 'ts_ls' and c.name ~= "null-ls"
+						end
+					})
+				end,
+			})
+		end
 	end,
 })
+
 
 -- local cmp = require('cmp')
 
