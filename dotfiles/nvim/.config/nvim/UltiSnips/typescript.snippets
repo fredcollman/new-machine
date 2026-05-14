@@ -11,7 +11,7 @@ const $1 = Effect.fn("$1")(function* ($2) {
 endsnippet
 
 snippet yy
-yield* _($1)
+yield* $1
 endsnippet
 
 snippet iv
@@ -76,6 +76,22 @@ it.effect("$1", () =>
 );
 endsnippet
 
+snippet desce
+import { Effect, Layer } from "effect"
+import { describe, expect, it } from "@effect/vitest";
+
+const testLayer = Layer.empty
+
+describe("$1", () => {
+	it.effect("$2", () =>
+		Effect.gen(function* () {
+			yield* Effect.void;
+			expect(1).toBe(0);
+		}).pipe(Effect.provide(testLayer))
+	);
+});
+endsnippet
+
 snippet hint
 //      ┌─── $1
 //      ▼
@@ -111,7 +127,7 @@ $2
 // snippet-end: $1
 endsnippet
 
-snippet svc
+snippet svcc
 const PACKAGE = "$2"
 const TAG = \`${PACKAGE}/$1\`
 export class $1 extends Effect.Service<$1>()(TAG, {
@@ -127,6 +143,47 @@ export class $1 extends Effect.Service<$1>()(TAG, {
 		}),
 	)
 }) {}
+endsnippet
+
+snippet svc
+const PACKAGE = "$2"
+const TAG = \`${PACKAGE}/$1\`
+
+const annotated = Effect.annotateLogs({
+	service: TAG
+})
+
+const make = Effect.gen(function*() {
+	const todo = Effect.fn(\`${TAG}.todo\`)(function* () {
+		yield* Effect.log("TODO")
+	}, annotated)
+
+	return {
+		todo,
+	} as const
+}).pipe(annotated)
+
+export type $1Shape = Effect.Effect.Success<typeof make>
+
+export class $1 extends Context.Tag(TAG)<
+	$1,
+	$1Shape
+>() {}
+
+export const use: <A, E, R>(f: (service: $1Shape) => Effect.Effect<A, E, R>) => Effect.Effect<A, E, $1 | R> = (f) => $1.pipe(Effect.flatMap(service => f(service)))
+
+export const layerSimple = Layer.effect($1, make);
+
+export const layer = layerSimple.pipe(
+	Layer.provide(Layer.empty),
+);
+endsnippet
+
+snippet meth
+const $1 = Effect.fn(\`${TAG}.$1\`)(function* () {
+	yield* Effect.log("TODO $1")
+	return "TODO $1"
+}, annotated)
 endsnippet
 
 snippet deprecate
@@ -169,10 +226,46 @@ export const load: PageLoad = (event) => {
 }
 endsnippet
 
+snippet ir
+import * as $1 from "./$1.js"
+endsnippet
+
 snippet barrel
 export * as $1 from "./$1"
 endsnippet
 
 snippet cbarrel
 export { default as $1 } from "./$1.svelte"
+endsnippet
+
+snippet atom
+export const $1Atom = runtime.atom(
+	Effect.fnUntraced(function* (ctx) {
+		$2
+	})
+)
+endsnippet
+
+snippet atoms
+import { makeRuntime } from "$lib/atom";
+import { Layer } from "effect";
+
+const layer = Layer.mergeAll(Layer.empty);
+
+export const runtime = makeRuntime(layer);
+endsnippet
+
+snippet struct
+const $1_ = S.TaggedStruct(\`${TAG}/$1\`, {
+	todo: S.Literal("TODO"),
+});
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface $1 extends S.Schema.Type<typeof $1_> { }
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface $1Encoded extends S.Schema.Encoded<typeof $1_> { }
+export const $1: S.Schema<$1, $1Encoded> = $1_;
+endsnippet
+
+snippet snap
+expect($1).toMatchInlineSnapshot()
 endsnippet

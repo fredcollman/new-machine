@@ -70,8 +70,16 @@ const { data }: PageProps = $props();
 
 <style>
 .todo {
-	border: var(--border-1) solid blue;
+	border: var(--border-size-1) solid blue;
 }
 </style>
 
+endsnippet
+
+snippet ir
+import $1 from './$1.svelte'
+endsnippet
+
+snippet props
+const { $1 }: Props = \$props()
 endsnippet
