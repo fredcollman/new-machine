@@ -52,10 +52,10 @@ return {
       filetypes = {
         'javascript',
         'javascriptreact',
-        'javascript.jsx',
+        -- 'javascript.jsx',
         'typescript',
         'typescriptreact',
-        'typescript.tsx',
+        -- 'typescript.tsx',
         'astro'
       }
     })
