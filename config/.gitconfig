@@ -34,4 +34,4 @@
 [include]
   path = ~/local.gitconfig
 [blame]
-  ignoreRevsFile = .git-blame-ignore-revs
+  ignoreRevsFile = :(optional).git-blame-ignore-revs
