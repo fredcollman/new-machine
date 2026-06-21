@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
 # set ZSH as default shell
-# chsh -s /usr/bin/zsh
+# it may be best to run this manually?
+chsh -s /usr/bin/zsh
+git submodule init
 git submodule update
 
 

@@ -18,3 +18,12 @@ If running on Windows, you might need to make sure that line endings are configu
 ```sh
 git config --global core.autocrlf true
 ```
+
+## Other notes
+
+Run 
+```shell
+chsh -s /usr/bin/zsh
+```
+
+manually before configuring (maybe?).

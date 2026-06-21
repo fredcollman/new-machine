@@ -11,7 +11,7 @@ const $1 = Effect.fn("$1")(function* ($2) {
 endsnippet
 
 snippet yy
-yield* _($1)
+yield* $1
 endsnippet
 
 snippet iv
@@ -89,12 +89,20 @@ snippet iee
 import * as Effect from 'effect/Effect'
 endsnippet
 
+snippet iea
+import * as A from 'effect/Array'
+endsnippet
+
 snippet ieo
 import * as O from 'effect/Option'
 endsnippet
 
 snippet ies
 import * as S from 'effect/Schema'
+endsnippet
+
+snippet is
+import $1 from '$lib/services/$1'
 endsnippet
 
 snippet snip
@@ -104,14 +112,20 @@ $2
 endsnippet
 
 snippet svc
-export class $1 extends Effect.Service<$1>()("$1", {
+const PACKAGE = "$2"
+const TAG = \`${PACKAGE}/$1\`
+export class $1 extends Effect.Service<$1>()(TAG, {
 	dependencies: [],
 	effect: Effect.gen(function* () {
 		const todo = yield* Effect.succeed(true)
 		return {
 		todo
 		}
-	})
+	}).pipe(
+		Effect.annotateLogs({
+			service: TAG
+		}),
+	)
 }) {}
 endsnippet
 
@@ -119,4 +133,46 @@ snippet deprecate
 /**
  * @deprecated $1
  */
+endsnippet
+
+snippet transform
+export const $1 = S.transformOrFail(
+	$2,
+	$3,
+	{
+		encode: (actual, _, ast) =>
+			ParseResult.fail(
+				new ParseResult.Forbidden(
+					ast,
+					actual,
+					"TODO $1.encode",
+				),
+			),
+		decode: (actual, _, ast) =>
+			ParseResult.fail(
+				new ParseResult.Forbidden(
+					ast,
+					actual,
+					"TODO $1.decode",
+				),
+			),
+		strict: true
+	},
+);
+endsnippet
+
+snippet load
+import type { PageLoad } from "./$types";
+
+export const load: PageLoad = (event) => {
+	return {}
+}
+endsnippet
+
+snippet barrel
+export * as $1 from "./$1"
+endsnippet
+
+snippet cbarrel
+export { default as $1 } from "./$1.svelte"
 endsnippet
