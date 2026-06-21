@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Playing around with an application launcher
+# Will this do what I want?
+
+sudo apt install rofi
