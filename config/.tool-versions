@@ -5,3 +5,4 @@ pnpm      latest
 rust      1.66.0
 yarn      4.5.3
 bun       1.4.0
+uv        latest

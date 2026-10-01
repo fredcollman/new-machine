@@ -23,3 +23,10 @@ vim.opt.smartcase = true
 -- show line numbers relative to current line
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+-- https://www.reddit.com/r/neovim/comments/s3i0ez/how_to_avoid_having_to_install_neovim_in_every/
+if vim.fn.exists("$VIRTUAL_ENV") == 1 then
+  vim.g.python3_host_prog = vim.fn.substitute(vim.fn.system("which -a python3 | head -n2 | tail -n1"), "\n", "", "g")
+else
+  vim.g.python3_host_prog = vim.fn.substitute(vim.fn.system("which python3"), "\n", "", "g")
+end
