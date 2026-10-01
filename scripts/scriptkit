@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+# Unfortunately, doesn't seem to work...
+
+# CLONE_DIR="~/dev/script-kit/app"
+
+# https://npmx.dev/package/native-keymap
+# sudo apt-get install libx11-dev libxkbfile-dev
+
+# # mkdir -p $(basename "$CLONE_DIR")
+# # git clone https://github.com/script-kit/app "$CLONE_DIR"

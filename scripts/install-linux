@@ -27,3 +27,5 @@ scripts/neovim
 scripts/flatpak
 scripts/zen-browser
 scripts/nix
+# scripts/scriptkit
+# scripts/rofi
