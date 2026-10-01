@@ -26,17 +26,20 @@ endsnippet
 
 snippet c
 <script lang="ts">
+import type { Snippet } from "svelte";
 import Debug from '$lib/components/Debug.svelte'
 
 interface Props {
 	value: string
+	children: Snippet
 }
 
-const {value}: Props = $props()
+const {value, children}: Props = $props()
 </script>
 
 <div class="todo">
 	<Debug {value} />
+	{@render children()}
 </div>
 
 <style>
@@ -48,6 +51,10 @@ endsnippet
 
 snippet sl
 import '@shoelace-style/shoelace/dist/components/$1/$1.js';
+endsnippet
+
+snippet wa
+import "@awesome.me/webawesome/dist/components/$1/$1.js";
 endsnippet
 
 snippet snip

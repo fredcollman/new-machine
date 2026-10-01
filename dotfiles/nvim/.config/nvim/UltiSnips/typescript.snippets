@@ -68,12 +68,11 @@ await pipe(
 endsnippet
 
 snippet ite
-it.effect("$1", () =>
-	Effect.gen(function* () {
-		yield* Effect.void;
-		expect(1).toBe(0);
-	})
-);
+it.effect("$1", Effect.fnUntraced(function* () {
+	yield* Effect.void;
+	$2
+	expect(1).toBe(0);
+}, Effect.provide(testLayer)));
 endsnippet
 
 snippet desce
@@ -83,12 +82,27 @@ import { describe, expect, it } from "@effect/vitest";
 const testLayer = Layer.empty
 
 describe("$1", () => {
-	it.effect("$2", () =>
-		Effect.gen(function* () {
-			yield* Effect.void;
-			expect(1).toBe(0);
-		}).pipe(Effect.provide(testLayer))
-	);
+	it.effect("$2", Effect.fnUntraced(function* () {
+		yield* Effect.void;
+		$3
+		expect(1).toBe(0);
+	}, Effect.provide(testLayer)));
+});
+endsnippet
+
+snippet descl
+import { Effect, Layer } from "effect"
+import { layer } from "@effect/vitest";
+import { deepStrictEqual } from "@effect/vitest/utils";
+
+const testLayer = Layer.empty
+
+layer(testLayer)("$1", (it) => {
+	it.effect("$2", Effect.fnUntraced(function* () {
+		yield* Effect.void;
+		$3
+		deepStrictEqual(1, 0);
+	}));
 });
 endsnippet
 
@@ -179,11 +193,58 @@ export const layer = layerSimple.pipe(
 );
 endsnippet
 
+snippet isvc
+const PACKAGE = "$2"
+const TAG = \`${PACKAGE}/$1\`
+
+const annotated = Effect.annotateLogs({
+	service: TAG
+})
+
+export interface $1Shape {
+	changeme: () => Effect.Effect<void>;
+}
+
+export class $1 extends Context.Tag(TAG)<
+	$1,
+	$1Shape
+>() {}
+
+const make = Effect.gen(function*() {
+	yield* Effect.log("TODO make");
+
+	const changeme = Effect.fn(\`${TAG}.changeme\`)(function*() {
+		yield* Effect.log("TODO changeme");
+	}, annotated);
+
+	return $1.of({
+		changeme,
+	});
+}).pipe(annotated);
+
+export const layerSimple = Layer.effect($1, make);
+
+const layerDependencies = Layer.empty;
+
+export const layer = Layer.provide(layerSimple, layerDependencies);
+endsnippet
+
 snippet meth
 const $1 = Effect.fn(\`${TAG}.$1\`)(function* () {
 	yield* Effect.log("TODO $1")
 	return "TODO $1"
 }, annotated)
+endsnippet
+
+snippet smeth
+const $1 = Effect.fnUntraced(
+	function* ($2) {
+		${3:yield* Effect.log("TODO $1")}
+		return Stream.make("TODO $1")
+	}, 
+	Stream.unwrap
+	Stream.withSpan(\`${TAG}.$1\`),
+)
 endsnippet
 
 snippet deprecate
@@ -239,9 +300,29 @@ export { default as $1 } from "./$1.svelte"
 endsnippet
 
 snippet atom
+export const $1Atom = Atom.make(
+	Effect.fnUntraced(function* (ctx) {
+		${2:yield* Effect.void}
+	})
+)
+endsnippet
+
+snippet ratom
 export const $1Atom = runtime.atom(
 	Effect.fnUntraced(function* (ctx) {
-		$2
+		${2:yield* Effect.void}
+	})
+)
+endsnippet
+
+snippet catom
+export const $1Atom = Atom.make($2)
+endsnippet
+
+snippet fatom
+export const $1Atom = runtime.fn<void>()(
+	Effect.fnUntraced(function* (_, _ctx) {
+		${2:yield* Effect.void}
 	})
 )
 endsnippet
@@ -268,4 +349,130 @@ endsnippet
 
 snippet snap
 expect($1).toMatchInlineSnapshot()
+endsnippet
+
+snippet stype
+export type $1 = S.Schema.Type<typeof $1>;
+endsnippet
+
+snippet ee
+Effect.Effect
+endsnippet
+
+snippet e.
+Effect.
+endsnippet
+
+snippet efu
+Effect.fnUntraced(function* ($1) {
+	$2
+})
+endsnippet
+
+snippet ss
+Stream.Stream
+endsnippet
+
+snippet s.
+Stream.
+endsnippet
+
+snippet sm
+Stream.map(v => $1)
+endsnippet
+
+snippet sfm
+Stream.flatMap(v => $1)
+endsnippet
+
+snippet su
+Stream.unwrap
+endsnippet
+
+snippet sg
+Effect.gen(function*() {
+	${1:yield* Effect.void}
+	return Stream.empty
+}).pipe(Stream.unwrap)
+endsnippet
+
+snippet ns
+$1.$1
+endsnippet
+
+snippet ll
+Layer.Layer
+endsnippet
+
+snippet l.
+Layer.
+endsnippet
+
+snippet lp
+Layer.provide(${1:layerSimple}, ${2:layerDependencies})
+endsnippet
+
+snippet enum
+export type $1 = Data.TaggedEnum<{
+	$2
+}>
+export const $1 = Data.taggedEnum<$1>()
+endsnippet
+
+snippet dtm
+DateTime.unsafeMake("${1:2000}")
+endsnippet
+
+snippet dtn
+DateTime.now
+endsnippet
+
+snippet dtu
+DateTime.Utc
+endsnippet
+
+snippet oo
+Option.Option
+endsnippet
+
+snippet o.
+Option.
+endsnippet
+
+snippet om
+Option.map(${1:v} => ${1:v})
+endsnippet
+
+snippet ofm
+Option.flatMap(${1:v} => ${2:Option.some(${1:v})})
+endsnippet
+
+snippet internal
+import * as internal from "./internal/`!p snip.rv = snip.basename`"
+
+export const { $1 } = internal
+endsnippet
+
+snippet pk
+import { PrimaryKey } from "effect";
+
+export class ${1:Id} implements PrimaryKey.PrimaryKey {
+	[PrimaryKey.symbol](): string {
+		return \`${2:TODO changeme}\`
+	}
+}
+endsnippet
+
+snippet ra
+ReadonlyArray<$1>
+endsnippet
+
+snippet @i
+/**
+* @internal
+*/
+endsnippet
+
+snippet aer
+<A, E, R>
 endsnippet

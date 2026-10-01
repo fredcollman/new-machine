@@ -29,6 +29,12 @@ return {
 
     vim.diagnostic.config({ virtual_lines = true })
 
+    vim.lsp.config("oxlint", {
+      settings = {
+        typeAware = false
+      }
+    })
+
     vim.lsp.config("vtsls", {
       settings = {
         typescript = {

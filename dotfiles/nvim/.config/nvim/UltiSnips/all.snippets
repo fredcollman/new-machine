@@ -3,3 +3,13 @@ snippet uuid
 if not snip.c:
 	snip.rv = repr(str(uuid.uuid4()))`
 endsnippet
+
+snippet uuidt
+00000000-7357-0000-0000-000000000001
+endsnippet
+
+snippet now
+`!p import datetime
+if not snip.c:
+	snip.rv = repr(datetime.datetime.now(datetime.UTC).isoformat())`
+endsnippet
