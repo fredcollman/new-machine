@@ -3,7 +3,8 @@ return {
   'neovim/nvim-lspconfig',
   config = function()
     vim.lsp.enable({
-      'pyright',
+      -- 'pyright',
+      'basedpyright',
       'ruff',
       'lua_ls',
       -- use vtsls instead

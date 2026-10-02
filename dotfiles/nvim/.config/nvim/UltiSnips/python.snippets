@@ -6,6 +6,11 @@ class $1Test(TestCase):
         x
 endsnippet
 
+snippet t
+def test_$1(self) -> None:
+	${0:pass}
+endsnippet
+
 snippet cqc
 from django.db import connection
 from django.test.utils import CaptureQueriesContext
