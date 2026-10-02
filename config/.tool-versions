@@ -2,4 +2,4 @@ python    latest
 nodejs    22.19.0
 terraform 1.6.0
 pnpm      latest
-rust      1.66.0
+rust      1.97.1
