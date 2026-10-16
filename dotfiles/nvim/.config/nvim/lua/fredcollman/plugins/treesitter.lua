@@ -42,7 +42,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter").install {
+			local parsers = {
           'bash',
           'css',
           'html',
@@ -52,7 +52,29 @@ return {
           'svelte',
           'typescript',
           'vimdoc',
-      }
+			}
+
+			local group = vim.api.nvim_create_augroup("TreeSittingFred", { clear = true })
+			vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
+				group = group,
+				callback = function()
+					if vim.bo.buftype ~= "" then
+						return
+					end
+
+					pcall(vim.treesitter.start, 0)
+				end,
+			})
+
+			vim.api.nvim_create_autocmd("User", {
+				group = group,
+				pattern = "VeryLazy",
+				once = true,
+				callback = function()
+					require("nvim-treesitter").install(parsers)
+				end,
+			})
+
       -- require("nvim-treesitter.configs").setup({
       --   -- A list of parser names, or "all"
       --   ensure_installed = {
