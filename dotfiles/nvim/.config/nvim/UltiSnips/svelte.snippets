@@ -21,13 +21,13 @@ import * as S from 'effect/Schema'
 endsnippet
 
 snippet ic
-import $1 from '$lib/components/$1.svelte'
+import $1 from '#lib/components/$1.svelte'
 endsnippet
 
 snippet c
 <script lang="ts">
 import type { Snippet } from "svelte";
-import Debug from '$lib/components/Debug.svelte'
+import Debug from '#lib/components/Debug.svelte'
 
 interface Props {
 	value: string
@@ -65,7 +65,7 @@ endsnippet
 
 snippet page
 <script lang="ts">
-import Debug from "$lib/components/Debug.svelte";
+import Debug from "#lib/components/Debug.svelte";
 import type { PageProps } from "./$types";
 
 const { data }: PageProps = $props();
