@@ -45,8 +45,10 @@ return {
 			local parsers = {
           'bash',
           'css',
+          'gitcommit',
           'html',
           'javascript',
+          'lua',
           'python',
           'rust',
           'svelte',
