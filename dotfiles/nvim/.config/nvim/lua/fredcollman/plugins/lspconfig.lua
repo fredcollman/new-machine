@@ -14,6 +14,7 @@ return {
       'svelte',
       'astro',
       -- TODO eslint: only on save, too noisy otherwise!
+      'oxlint',
       -- 'eslint',
     })
 
@@ -111,6 +112,7 @@ return {
         'jsonc',
         'markdown',
         'svelte',
+        'css',
         -- 'python',
         -- 'toml',
         -- 'rust',
