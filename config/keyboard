@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
+# https://askubuntu.com/questions/363346/how-to-permanently-switch-caps-lock-and-esc
 
 # Swap ESC and Caps Lock
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
+# for this session
+setxkbmap -option caps:swapescape
+# for all sessions
+echo "setxkbmap -option caps:swapescape" >>~/.zprofile

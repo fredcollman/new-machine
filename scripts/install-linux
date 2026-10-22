@@ -2,7 +2,7 @@
 scripts/essentials
 . scripts/homebrew
 scripts/zsh
-scripts/asdf
+# scripts/asdf
 scripts/jq
 scripts/gnome-tweak-tool
 scripts/gnome-extensions
@@ -14,15 +14,18 @@ scripts/docker
 scripts/fzf
 scripts/ag
 scripts/ctags
-scripts/direnv
+# scripts/direnv
 scripts/cloc
 scripts/brew-leaves-linux
 scripts/neovim
-scripts/python
-scripts/nodejs
-scripts/rust
-scripts/tauri
-scripts/terraform
-scripts/shellspec
+# scripts/python
+# scripts/nodejs
+# scripts/rust
+# scripts/tauri
+# scripts/terraform
+# scripts/shellspec
 scripts/flatpak
+scripts/zen-browser
 scripts/nix
+# scripts/scriptkit
+# scripts/rofi

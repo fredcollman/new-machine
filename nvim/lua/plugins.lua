@@ -104,6 +104,7 @@ return require("packer").startup(
 		-- wanted by telescope
 		use({
 			"nvim-treesitter/nvim-treesitter",
+			branch ="main",
 			run = ":TSUpdate",
 		})
 

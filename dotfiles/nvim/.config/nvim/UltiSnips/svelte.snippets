@@ -49,3 +49,29 @@ endsnippet
 snippet sl
 import '@shoelace-style/shoelace/dist/components/$1/$1.js';
 endsnippet
+
+snippet snip
+{#snippet $1()}
+	$2
+{/snippet}
+endsnippet
+
+snippet page
+<script lang="ts">
+import Debug from "$lib/components/Debug.svelte";
+import type { PageProps } from "./$types";
+
+const { data }: PageProps = $props();
+</script>
+
+<div class="todo">
+	<Debug value={data} />
+</div>
+
+<style>
+.todo {
+	border: var(--border-1) solid blue;
+}
+</style>
+
+endsnippet

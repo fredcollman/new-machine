@@ -11,6 +11,7 @@ brew install \
   mise \
   neovim \
   ripgrep \
+  stow \
   universal-ctags
 # icu4c \
 # libnsl \

@@ -1,15 +1,15 @@
-. $ZDOTDIR/asdf
+# . $ZDOTDIR/asdf
 . $ZDOTDIR/fasd
 . $ZDOTDIR/up
 . $ZDOTDIR/shell
 . $ZDOTDIR/git
 . $ZDOTDIR/history
 . $ZDOTDIR/prompt
-. $ZDOTDIR/direnv
+# . $ZDOTDIR/direnv
 . $ZDOTDIR/node
 . $ZDOTDIR/docker-compose
 . $ZDOTDIR/brew
-. $ZDOTDIR/terraform
+# . $ZDOTDIR/terraform
 . $ZDOTDIR/mise
 
 if [ -f $ZDOTDIR/local-overrides ]; then
